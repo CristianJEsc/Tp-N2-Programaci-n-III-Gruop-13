@@ -12,11 +12,12 @@ namespace Gestion_de_Articulos
         public string Codigo { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
-        public int IdMarca { get; set; }
-        public int IdCategoria { get; set; }
+        public Marca MarcaArt { get; set; }
+
+        public Categoria CategoriaArt { get; set; }
         public decimal Precio { get; set; }
 
-        public List<string> Imagenes { get; set; }
+        public List<Imagen> Imagenes { get; set; }
 
     }
 }

@@ -47,7 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Atriculo.cs" />
+    <Compile Include="Categoria.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="Imagen.cs" />
+    <Compile Include="Marca.cs" />
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
