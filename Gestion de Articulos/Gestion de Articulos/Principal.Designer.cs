@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.btn_Agregar = new System.Windows.Forms.Button();
             this.pb_Agregar_Imagen = new System.Windows.Forms.PictureBox();
-            this.cbx_marca = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtb_Descripcion = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cbx_Marca = new System.Windows.Forms.ComboBox();
+            this.articuloBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbx_Precio = new System.Windows.Forms.TextBox();
+            this.tbx_Descripcion = new System.Windows.Forms.TextBox();
+            this.tbx_Nombre = new System.Windows.Forms.TextBox();
             this.btn_Eliminar = new System.Windows.Forms.Button();
             this.dgv_Articulos = new System.Windows.Forms.DataGridView();
             this.btn_Editar = new System.Windows.Forms.Button();
@@ -47,6 +49,7 @@
             this.lbl_Nombre = new System.Windows.Forms.Label();
             this.lbl_Codigo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Agregar_Imagen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.articuloBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Articulos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,9 +62,10 @@
             this.btn_Agregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(138, 54);
-            this.btn_Agregar.TabIndex = 49;
+            this.btn_Agregar.TabIndex = 6;
             this.btn_Agregar.Text = "Agregar";
             this.btn_Agregar.UseVisualStyleBackColor = false;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // pb_Agregar_Imagen
             // 
@@ -77,64 +81,68 @@
             this.pb_Agregar_Imagen.TabIndex = 59;
             this.pb_Agregar_Imagen.TabStop = false;
             // 
-            // cbx_marca
+            // cbx_Marca
             // 
-            this.cbx_marca.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cbx_Marca.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbx_marca.BackColor = System.Drawing.Color.AliceBlue;
-            this.cbx_marca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cbx_marca.ForeColor = System.Drawing.Color.SteelBlue;
-            this.cbx_marca.FormattingEnabled = true;
-            this.cbx_marca.Location = new System.Drawing.Point(185, 494);
-            this.cbx_marca.Name = "cbx_marca";
-            this.cbx_marca.Size = new System.Drawing.Size(236, 37);
-            this.cbx_marca.TabIndex = 46;
+            this.cbx_Marca.BackColor = System.Drawing.Color.AliceBlue;
+            this.cbx_Marca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbx_Marca.ForeColor = System.Drawing.Color.SteelBlue;
+            this.cbx_Marca.FormattingEnabled = true;
+            this.cbx_Marca.Location = new System.Drawing.Point(185, 494);
+            this.cbx_Marca.Name = "cbx_Marca";
+            this.cbx_Marca.Size = new System.Drawing.Size(236, 37);
+            this.cbx_Marca.TabIndex = 3;
             // 
-            // textBox1
+            // articuloBindingSource
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.articuloBindingSource.DataSource = typeof(Gestion_de_Articulos.Articulo);
+            // 
+            // tbx_Precio
+            // 
+            this.tbx_Precio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.Color.AliceBlue;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.textBox1.Location = new System.Drawing.Point(184, 449);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(236, 37);
-            this.textBox1.TabIndex = 45;
+            this.tbx_Precio.BackColor = System.Drawing.Color.AliceBlue;
+            this.tbx_Precio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbx_Precio.ForeColor = System.Drawing.Color.SteelBlue;
+            this.tbx_Precio.Location = new System.Drawing.Point(184, 449);
+            this.tbx_Precio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbx_Precio.Multiline = true;
+            this.tbx_Precio.Name = "tbx_Precio";
+            this.tbx_Precio.Size = new System.Drawing.Size(236, 37);
+            this.tbx_Precio.TabIndex = 2;
             // 
-            // txtb_Descripcion
+            // tbx_Descripcion
             // 
-            this.txtb_Descripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tbx_Descripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtb_Descripcion.BackColor = System.Drawing.Color.AliceBlue;
-            this.txtb_Descripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtb_Descripcion.ForeColor = System.Drawing.Color.SteelBlue;
-            this.txtb_Descripcion.Location = new System.Drawing.Point(526, 396);
-            this.txtb_Descripcion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtb_Descripcion.Multiline = true;
-            this.txtb_Descripcion.Name = "txtb_Descripcion";
-            this.txtb_Descripcion.Size = new System.Drawing.Size(565, 186);
-            this.txtb_Descripcion.TabIndex = 48;
+            this.tbx_Descripcion.BackColor = System.Drawing.Color.AliceBlue;
+            this.tbx_Descripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbx_Descripcion.ForeColor = System.Drawing.Color.SteelBlue;
+            this.tbx_Descripcion.Location = new System.Drawing.Point(526, 396);
+            this.tbx_Descripcion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbx_Descripcion.Multiline = true;
+            this.tbx_Descripcion.Name = "tbx_Descripcion";
+            this.tbx_Descripcion.Size = new System.Drawing.Size(565, 186);
+            this.tbx_Descripcion.TabIndex = 5;
             // 
-            // textBox2
+            // tbx_Nombre
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tbx_Nombre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.BackColor = System.Drawing.Color.AliceBlue;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.textBox2.Location = new System.Drawing.Point(184, 404);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(236, 37);
-            this.textBox2.TabIndex = 44;
+            this.tbx_Nombre.BackColor = System.Drawing.Color.AliceBlue;
+            this.tbx_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbx_Nombre.ForeColor = System.Drawing.Color.SteelBlue;
+            this.tbx_Nombre.Location = new System.Drawing.Point(184, 404);
+            this.tbx_Nombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbx_Nombre.Multiline = true;
+            this.tbx_Nombre.Name = "tbx_Nombre";
+            this.tbx_Nombre.Size = new System.Drawing.Size(236, 37);
+            this.tbx_Nombre.TabIndex = 1;
             // 
             // btn_Eliminar
             // 
@@ -145,7 +153,7 @@
             this.btn_Eliminar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Eliminar.Name = "btn_Eliminar";
             this.btn_Eliminar.Size = new System.Drawing.Size(138, 54);
-            this.btn_Eliminar.TabIndex = 51;
+            this.btn_Eliminar.TabIndex = 8;
             this.btn_Eliminar.Text = "Eliminar";
             this.btn_Eliminar.UseVisualStyleBackColor = false;
             // 
@@ -160,7 +168,7 @@
             this.dgv_Articulos.RowHeadersWidth = 62;
             this.dgv_Articulos.RowTemplate.Height = 28;
             this.dgv_Articulos.Size = new System.Drawing.Size(738, 290);
-            this.dgv_Articulos.TabIndex = 52;
+            this.dgv_Articulos.TabIndex = 9;
             // 
             // btn_Editar
             // 
@@ -171,7 +179,7 @@
             this.btn_Editar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Editar.Name = "btn_Editar";
             this.btn_Editar.Size = new System.Drawing.Size(138, 54);
-            this.btn_Editar.TabIndex = 50;
+            this.btn_Editar.TabIndex = 7;
             this.btn_Editar.Text = "Editar";
             this.btn_Editar.UseVisualStyleBackColor = false;
             // 
@@ -188,7 +196,7 @@
             this.tbx_Codigo.Multiline = true;
             this.tbx_Codigo.Name = "tbx_Codigo";
             this.tbx_Codigo.Size = new System.Drawing.Size(236, 37);
-            this.tbx_Codigo.TabIndex = 43;
+            this.tbx_Codigo.TabIndex = 0;
             // 
             // cbx_Categoria
             // 
@@ -202,7 +210,7 @@
             this.cbx_Categoria.Location = new System.Drawing.Point(184, 545);
             this.cbx_Categoria.Name = "cbx_Categoria";
             this.cbx_Categoria.Size = new System.Drawing.Size(237, 37);
-            this.cbx_Categoria.TabIndex = 47;
+            this.cbx_Categoria.TabIndex = 4;
             // 
             // lbl_Precio
             // 
@@ -295,10 +303,10 @@
             this.ClientSize = new System.Drawing.Size(1292, 618);
             this.Controls.Add(this.btn_Agregar);
             this.Controls.Add(this.pb_Agregar_Imagen);
-            this.Controls.Add(this.cbx_marca);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.txtb_Descripcion);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.cbx_Marca);
+            this.Controls.Add(this.tbx_Precio);
+            this.Controls.Add(this.tbx_Descripcion);
+            this.Controls.Add(this.tbx_Nombre);
             this.Controls.Add(this.btn_Eliminar);
             this.Controls.Add(this.dgv_Articulos);
             this.Controls.Add(this.btn_Editar);
@@ -311,10 +319,17 @@
             this.Controls.Add(this.lbl_Nombre);
             this.Controls.Add(this.lbl_Codigo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Principal";
-            this.Text = "Form1";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Modificar Articulo";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Principal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_Agregar_Imagen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.articuloBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Articulos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -325,10 +340,10 @@
 
         private System.Windows.Forms.Button btn_Agregar;
         private System.Windows.Forms.PictureBox pb_Agregar_Imagen;
-        public System.Windows.Forms.ComboBox cbx_marca;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox txtb_Descripcion;
-        private System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.ComboBox cbx_Marca;
+        private System.Windows.Forms.TextBox tbx_Precio;
+        private System.Windows.Forms.TextBox tbx_Descripcion;
+        private System.Windows.Forms.TextBox tbx_Nombre;
         private System.Windows.Forms.Button btn_Eliminar;
         private System.Windows.Forms.DataGridView dgv_Articulos;
         private System.Windows.Forms.Button btn_Editar;
@@ -340,6 +355,7 @@
         private System.Windows.Forms.Label lbl_Descripcion;
         private System.Windows.Forms.Label lbl_Nombre;
         private System.Windows.Forms.Label lbl_Codigo;
+        private System.Windows.Forms.BindingSource articuloBindingSource;
     }
 }
 
