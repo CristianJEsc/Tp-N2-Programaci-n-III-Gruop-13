@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gestion_de_Articulos
 {
-    internal class Atriculo
+    internal class Articulo
     {
         public int Id { get; set; }
         public string Codigo { get; set; }
@@ -17,5 +17,6 @@ namespace Gestion_de_Articulos
         public decimal Precio { get; set; }
 
         public List<string> Imagenes { get; set; }
+
     }
 }

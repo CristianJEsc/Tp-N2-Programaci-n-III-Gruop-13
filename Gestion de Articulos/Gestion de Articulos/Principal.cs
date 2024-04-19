@@ -18,5 +18,10 @@ namespace Gestion_de_Articulos
         {
             InitializeComponent();
         }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
