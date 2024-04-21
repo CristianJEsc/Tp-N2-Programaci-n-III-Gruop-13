@@ -16,7 +16,7 @@ namespace Gestion_de_Articulos
 
             try
             {
-                acceso.setearConsulta("select a.Id as Id, Codigo, Nombre, a.Descripcion as Descripcion, m.Descripcion as Marca, c.Descripcion as Categoria, Precio from Articulos a join Marcas m on m.Id=a.IdMarca join Categorias c on c.Id=a.IdCategoria"); //la consulta es temporal, va a haber que reemplazar los id de marca y categoria por el nombre de los mismso
+                acceso.setearConsulta("select distinct( a.Id) as Id, Codigo, Nombre, a.Descripcion as Descripcion, case when m.Descripcion is null then '' else m.Descripcion end as Marca, case when c.Descripcion is null then '' else c.Descripcion end as Categoria, Precio, case when i.ImagenUrl is null then '' else i.ImagenUrl end as 'Url' from Articulos a left join Marcas m on m.Id=a.IdMarca left join Categorias c on c.Id=a.IdCategoria left join Imagenes i on a.id=i.IdArticulo"); //de momento la consulta repite el articulo si tiene mas de una imagen (ej: articulo id=2). hay que revisar esto
                 acceso.ejecutarLectura();
                 while (acceso.Lector.Read())
                 {
@@ -25,9 +25,10 @@ namespace Gestion_de_Articulos
                     aux.Codigo = (string)acceso.Lector["Codigo"];
                     aux.Nombre = (string)acceso.Lector["Nombre"];
                     aux.Descripcion = (string)acceso.Lector["Descripcion"];
-                    aux.Marca = (string)acceso.Lector["Marca"]; //a revisar
-                    aux.Categoria = (string)acceso.Lector["Categoria"]; //a revisar
+                    aux.Marca = (string)acceso.Lector["Marca"];
+                    aux.Categoria = (string)acceso.Lector["Categoria"];
                     aux.Precio = (decimal)acceso.Lector["Precio"];
+                    aux.UrlImagen = (string)acceso.Lector["Url"];
 
                     lista.Add(aux);
                 }
@@ -36,7 +37,6 @@ namespace Gestion_de_Articulos
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally

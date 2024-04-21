@@ -20,6 +20,7 @@ namespace Gestion_de_Articulos
         public decimal Precio { get; set; }
 
         //public List<Imagen> Imagenes { get; set; }
+        public string UrlImagen { get; set; } //a revisar
 
     }
 }

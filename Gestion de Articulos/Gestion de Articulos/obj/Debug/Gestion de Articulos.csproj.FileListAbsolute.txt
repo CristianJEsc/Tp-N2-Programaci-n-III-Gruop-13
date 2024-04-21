@@ -12,9 +12,11 @@ C:\Users\Franco\Documents\Programacion III\TP Grupal\Tp-N2-Programaci-n-III-Gruo
 C:\Users\Franco\Documents\Programacion III\TP Grupal\Tp-N2-Programaci-n-III-Gruop-13\Gestion de Articulos\Gestion de Articulos\bin\Debug\Gestion de Articulos.exe
 C:\Users\Franco\Documents\Programacion III\TP Grupal\Tp-N2-Programaci-n-III-Gruop-13\Gestion de Articulos\Gestion de Articulos\bin\Debug\Gestion de Articulos.pdb
 C:\Users\Franco\Documents\Programacion III\TP Grupal\Tp-N2-Programaci-n-III-Gruop-13\Gestion de Articulos\Gestion de Articulos\obj\Debug\Gestion de Articulos.csproj.AssemblyReference.cache
-C:\Users\Franco\Documents\Programacion III\TP Grupal\Tp-N2-Programaci-n-III-Gruop-13\Gestion de Articulos\Gestion de Articulos\obj\Debug\Gestion_de_Articulos.Principal.resources
 C:\Users\Franco\Documents\Programacion III\TP Grupal\Tp-N2-Programaci-n-III-Gruop-13\Gestion de Articulos\Gestion de Articulos\obj\Debug\Gestion_de_Articulos.Properties.Resources.resources
 C:\Users\Franco\Documents\Programacion III\TP Grupal\Tp-N2-Programaci-n-III-Gruop-13\Gestion de Articulos\Gestion de Articulos\obj\Debug\Gestion de Articulos.csproj.GenerateResource.cache
 C:\Users\Franco\Documents\Programacion III\TP Grupal\Tp-N2-Programaci-n-III-Gruop-13\Gestion de Articulos\Gestion de Articulos\obj\Debug\Gestion de Articulos.csproj.CoreCompileInputs.cache
 C:\Users\Franco\Documents\Programacion III\TP Grupal\Tp-N2-Programaci-n-III-Gruop-13\Gestion de Articulos\Gestion de Articulos\obj\Debug\Gestion de Articulos.exe
 C:\Users\Franco\Documents\Programacion III\TP Grupal\Tp-N2-Programaci-n-III-Gruop-13\Gestion de Articulos\Gestion de Articulos\obj\Debug\Gestion de Articulos.pdb
+C:\Users\Franco\Documents\Programacion III\TP Grupal\Tp-N2-Programaci-n-III-Gruop-13\Gestion de Articulos\Gestion de Articulos\obj\Debug\Gestion_de_Articulos.frm_Principal.resources
+C:\Users\Franco\Documents\Programacion III\TP Grupal\Tp-N2-Programaci-n-III-Gruop-13\Gestion de Articulos\Gestion de Articulos\obj\Debug\Gestion_de_Articulos.frm_Editar.resources
+C:\Users\Franco\Documents\Programacion III\TP Grupal\Tp-N2-Programaci-n-III-Gruop-13\Gestion de Articulos\Gestion de Articulos\obj\Debug\Gestion_de_Articulos.frm_Agregar.resources

@@ -12,9 +12,10 @@ using System.Configuration;
 
 namespace Gestion_de_Articulos
 {
-    public partial class Principal : Form
+    public partial class frm_Principal : Form
     {
-        public Principal()
+        private List<Articulo> listaArt;
+        public frm_Principal()
         {
             InitializeComponent();
         }
@@ -22,7 +23,39 @@ namespace Gestion_de_Articulos
         private void Principal_Load(object sender, EventArgs e)
         {
             listaArticulo lista = new listaArticulo();
-            dgv_Articulos.DataSource = lista.listar();
+            listaArt = lista.listar();
+            dgv_Articulos.DataSource = listaArt;
+            cargarImagen(listaArt[0].UrlImagen);
+        }
+
+        private void dgv_Articulos_SelectionChanged(object sender, EventArgs e)
+        {
+            Articulo seleccion = (Articulo)dgv_Articulos.CurrentRow.DataBoundItem;
+            cargarImagen(seleccion.UrlImagen);
+        }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pb_Imagen.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+                pb_Imagen.Load("https://t4.ftcdn.net/jpg/05/17/53/57/360_F_517535712_q7f9QC9X6TQxWi6xYZZbMmw5cnLMr279.jpg");
+            }
+        }
+
+        private void btn_Editar_Click(object sender, EventArgs e)
+        {
+            frm_Editar ventana = new frm_Editar();
+            ventana.ShowDialog();
+        }
+
+        private void btn_Agregar_Click(object sender, EventArgs e)
+        {
+            frm_Agregar ventana = new frm_Agregar();
+            ventana.ShowDialog();
         }
 
         /*private void Principal_Load(object sender, EventArgs e)
