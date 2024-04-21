@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+//using System.Data.SqlClient;
 using System.Configuration;
 
 namespace Gestion_de_Articulos
@@ -20,6 +20,12 @@ namespace Gestion_de_Articulos
         }
 
         private void Principal_Load(object sender, EventArgs e)
+        {
+            listaArticulo lista = new listaArticulo();
+            dgv_Articulos.DataSource = lista.listar();
+        }
+
+        /*private void Principal_Load(object sender, EventArgs e)
         {//Cargador de Formulario
             Conexion.Conectar();
             dgv_Articulos.DataSource = Index();
@@ -76,6 +82,6 @@ namespace Gestion_de_Articulos
             }
             
 
-        }
+        }*/
     }
 }

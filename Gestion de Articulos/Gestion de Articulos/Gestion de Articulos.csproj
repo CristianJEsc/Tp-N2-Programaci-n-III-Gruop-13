@@ -46,10 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Atriculo.cs" />
+    <Compile Include="Articulo.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Imagen.cs" />
+    <Compile Include="listaArticulo.cs" />
     <Compile Include="Marca.cs" />
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
