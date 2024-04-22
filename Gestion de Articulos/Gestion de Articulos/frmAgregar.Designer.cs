@@ -1,6 +1,6 @@
 ﻿namespace Gestion_de_Articulos
 {
-    partial class frm_Editar
+    partial class frm_Agregar
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Editar));
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.tbx_Marca = new System.Windows.Forms.ComboBox();
             this.articuloBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -71,14 +70,14 @@
             this.tbx_Marca.ForeColor = System.Drawing.Color.SteelBlue;
             this.tbx_Marca.FormattingEnabled = true;
             this.tbx_Marca.Location = new System.Drawing.Point(186, 108);
-            this.tbx_Marca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbx_Marca.Margin = new System.Windows.Forms.Padding(2);
             this.tbx_Marca.Name = "tbx_Marca";
             this.tbx_Marca.Size = new System.Drawing.Size(182, 28);
             this.tbx_Marca.TabIndex = 3;
             // 
             // articuloBindingSource
             // 
-            this.articuloBindingSource.DataSource = typeof(Gestion_de_Articulos.Articulo);
+            this.articuloBindingSource.DataSource = typeof(dominio.Articulo);
             // 
             // tbx_Precio
             // 
@@ -153,7 +152,7 @@
             this.tbx_Categoria.ForeColor = System.Drawing.Color.SteelBlue;
             this.tbx_Categoria.FormattingEnabled = true;
             this.tbx_Categoria.Location = new System.Drawing.Point(186, 141);
-            this.tbx_Categoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbx_Categoria.Margin = new System.Windows.Forms.Padding(2);
             this.tbx_Categoria.Name = "tbx_Categoria";
             this.tbx_Categoria.Size = new System.Drawing.Size(182, 28);
             this.tbx_Categoria.TabIndex = 4;
@@ -276,7 +275,7 @@
             this.tbx_url.Size = new System.Drawing.Size(182, 25);
             this.tbx_url.TabIndex = 60;
             // 
-            // frm_Editar
+            // frm_Agregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -298,14 +297,13 @@
             this.Controls.Add(this.lbl_Nombre);
             this.Controls.Add(this.lbl_Codigo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frm_Editar";
+            this.Name = "frm_Agregar";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Editar Artículo";
+            this.Text = "Agregar Artículo";
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.articuloBindingSource)).EndInit();
             this.ResumeLayout(false);

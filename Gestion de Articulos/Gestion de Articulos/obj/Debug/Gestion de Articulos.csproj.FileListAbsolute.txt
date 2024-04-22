@@ -20,3 +20,10 @@ C:\Users\Franco\Documents\Programacion III\TP Grupal\Tp-N2-Programaci-n-III-Gruo
 C:\Users\Franco\Documents\Programacion III\TP Grupal\Tp-N2-Programaci-n-III-Gruop-13\Gestion de Articulos\Gestion de Articulos\obj\Debug\Gestion_de_Articulos.frm_Principal.resources
 C:\Users\Franco\Documents\Programacion III\TP Grupal\Tp-N2-Programaci-n-III-Gruop-13\Gestion de Articulos\Gestion de Articulos\obj\Debug\Gestion_de_Articulos.frm_Editar.resources
 C:\Users\Franco\Documents\Programacion III\TP Grupal\Tp-N2-Programaci-n-III-Gruop-13\Gestion de Articulos\Gestion de Articulos\obj\Debug\Gestion_de_Articulos.frm_Agregar.resources
+C:\Users\Franco\Documents\Programacion III\TP Grupal\Tp-N2-Programaci-n-III-Gruop-13\Gestion de Articulos\Gestion de Articulos\bin\Debug\dominio.dll
+C:\Users\Franco\Documents\Programacion III\TP Grupal\Tp-N2-Programaci-n-III-Gruop-13\Gestion de Articulos\Gestion de Articulos\bin\Debug\dominio.pdb
+C:\Users\Franco\Documents\Programacion III\TP Grupal\Tp-N2-Programaci-n-III-Gruop-13\Gestion de Articulos\Gestion de Articulos\obj\Debug\Gestion .98154945.Up2Date
+C:\Users\Franco\Documents\Programacion III\TP Grupal\Tp-N2-Programaci-n-III-Gruop-13\Gestion de Articulos\Gestion de Articulos\bin\Debug\conexion.dll
+C:\Users\Franco\Documents\Programacion III\TP Grupal\Tp-N2-Programaci-n-III-Gruop-13\Gestion de Articulos\Gestion de Articulos\bin\Debug\gestor.dll
+C:\Users\Franco\Documents\Programacion III\TP Grupal\Tp-N2-Programaci-n-III-Gruop-13\Gestion de Articulos\Gestion de Articulos\bin\Debug\conexion.pdb
+C:\Users\Franco\Documents\Programacion III\TP Grupal\Tp-N2-Programaci-n-III-Gruop-13\Gestion de Articulos\Gestion de Articulos\bin\Debug\gestor.pdb

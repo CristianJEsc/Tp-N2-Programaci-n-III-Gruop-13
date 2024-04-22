@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gestion_de_Articulos
+namespace dominio
 {
-    internal class Categoria
+    public class Categoria
     {
         public int IdCategoria { get; set; }
         public string Descripcion { get; set; }

@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net;
+using dominio;
+using conexion;
 
-namespace Gestion_de_Articulos
+namespace gestor
 {
-    internal class listaArticulo
+    public class gestionArticulo
     {
         public List<Articulo> listar()
         {
