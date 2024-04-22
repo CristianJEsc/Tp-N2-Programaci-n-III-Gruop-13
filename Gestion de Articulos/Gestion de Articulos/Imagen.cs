@@ -10,5 +10,6 @@ namespace Gestion_de_Articulos
     {
         public int IdImagen { get; set; }
         public string UrlLink { get; set; }
+
     }
 }

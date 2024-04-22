@@ -25,10 +25,13 @@ namespace Gestion_de_Articulos
                     aux.Codigo = (string)acceso.Lector["Codigo"];
                     aux.Nombre = (string)acceso.Lector["Nombre"];
                     aux.Descripcion = (string)acceso.Lector["Descripcion"];
-                    aux.Marca = (string)acceso.Lector["Marca"];
-                    aux.Categoria = (string)acceso.Lector["Categoria"];
+                    aux.Marca = new Marca();
+                    aux.Marca.Descripcion = (string)acceso.Lector["Marca"];
+                    aux.Categoria = new Categoria();
+                    aux.Categoria.Descripcion = (string)acceso.Lector["Categoria"];
                     aux.Precio = (decimal)acceso.Lector["Precio"];
-                    aux.UrlImagen = (string)acceso.Lector["Url"];
+                    aux.Imagen = new Imagen();
+                    aux.Imagen.UrlLink = (string)acceso.Lector["Url"];
 
                     lista.Add(aux);
                 }

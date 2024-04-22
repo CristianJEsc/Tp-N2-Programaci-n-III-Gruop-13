@@ -25,13 +25,14 @@ namespace Gestion_de_Articulos
             listaArticulo lista = new listaArticulo();
             listaArt = lista.listar();
             dgv_Articulos.DataSource = listaArt;
-            cargarImagen(listaArt[0].UrlImagen);
+            dgv_Articulos.Columns["Imagen"].Visible = false;
+            cargarImagen(listaArt[0].Imagen.UrlLink);
         }
 
         private void dgv_Articulos_SelectionChanged(object sender, EventArgs e)
         {
             Articulo seleccion = (Articulo)dgv_Articulos.CurrentRow.DataBoundItem;
-            cargarImagen(seleccion.UrlImagen);
+            cargarImagen(seleccion.Imagen.UrlLink);
         }
 
         private void cargarImagen(string imagen)
