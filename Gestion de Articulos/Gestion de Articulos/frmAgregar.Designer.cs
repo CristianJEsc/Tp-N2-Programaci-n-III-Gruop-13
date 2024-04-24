@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.btn_Cancelar = new System.Windows.Forms.Button();
-            this.tbx_Marca = new System.Windows.Forms.ComboBox();
+            this.cbo_Marca = new System.Windows.Forms.ComboBox();
             this.articuloBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbx_Precio = new System.Windows.Forms.TextBox();
             this.tbx_Descripcion = new System.Windows.Forms.TextBox();
             this.tbx_Nombre = new System.Windows.Forms.TextBox();
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.tbx_Codigo = new System.Windows.Forms.TextBox();
-            this.tbx_Categoria = new System.Windows.Forms.ComboBox();
+            this.cbo_Categoria = new System.Windows.Forms.ComboBox();
             this.lbl_Precio = new System.Windows.Forms.Label();
             this.lbl_Categoria = new System.Windows.Forms.Label();
             this.lbl_Marca = new System.Windows.Forms.Label();
@@ -60,20 +60,22 @@
             this.btn_Cancelar.TabIndex = 6;
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = false;
+            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
-            // tbx_Marca
+            // cbo_Marca
             // 
-            this.tbx_Marca.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cbo_Marca.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.tbx_Marca.BackColor = System.Drawing.Color.AliceBlue;
-            this.tbx_Marca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tbx_Marca.ForeColor = System.Drawing.Color.SteelBlue;
-            this.tbx_Marca.FormattingEnabled = true;
-            this.tbx_Marca.Location = new System.Drawing.Point(186, 108);
-            this.tbx_Marca.Margin = new System.Windows.Forms.Padding(2);
-            this.tbx_Marca.Name = "tbx_Marca";
-            this.tbx_Marca.Size = new System.Drawing.Size(182, 28);
-            this.tbx_Marca.TabIndex = 3;
+            this.cbo_Marca.BackColor = System.Drawing.Color.AliceBlue;
+            this.cbo_Marca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_Marca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbo_Marca.ForeColor = System.Drawing.Color.SteelBlue;
+            this.cbo_Marca.FormattingEnabled = true;
+            this.cbo_Marca.Location = new System.Drawing.Point(186, 108);
+            this.cbo_Marca.Margin = new System.Windows.Forms.Padding(2);
+            this.cbo_Marca.Name = "cbo_Marca";
+            this.cbo_Marca.Size = new System.Drawing.Size(182, 28);
+            this.cbo_Marca.TabIndex = 3;
             // 
             // articuloBindingSource
             // 
@@ -129,6 +131,7 @@
             this.btn_Guardar.TabIndex = 7;
             this.btn_Guardar.Text = "Guardar";
             this.btn_Guardar.UseVisualStyleBackColor = false;
+            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
             // tbx_Codigo
             // 
@@ -143,19 +146,20 @@
             this.tbx_Codigo.Size = new System.Drawing.Size(182, 25);
             this.tbx_Codigo.TabIndex = 0;
             // 
-            // tbx_Categoria
+            // cbo_Categoria
             // 
-            this.tbx_Categoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cbo_Categoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.tbx_Categoria.BackColor = System.Drawing.Color.AliceBlue;
-            this.tbx_Categoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tbx_Categoria.ForeColor = System.Drawing.Color.SteelBlue;
-            this.tbx_Categoria.FormattingEnabled = true;
-            this.tbx_Categoria.Location = new System.Drawing.Point(186, 141);
-            this.tbx_Categoria.Margin = new System.Windows.Forms.Padding(2);
-            this.tbx_Categoria.Name = "tbx_Categoria";
-            this.tbx_Categoria.Size = new System.Drawing.Size(182, 28);
-            this.tbx_Categoria.TabIndex = 4;
+            this.cbo_Categoria.BackColor = System.Drawing.Color.AliceBlue;
+            this.cbo_Categoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_Categoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbo_Categoria.ForeColor = System.Drawing.Color.SteelBlue;
+            this.cbo_Categoria.FormattingEnabled = true;
+            this.cbo_Categoria.Location = new System.Drawing.Point(186, 141);
+            this.cbo_Categoria.Margin = new System.Windows.Forms.Padding(2);
+            this.cbo_Categoria.Name = "cbo_Categoria";
+            this.cbo_Categoria.Size = new System.Drawing.Size(182, 28);
+            this.cbo_Categoria.TabIndex = 4;
             // 
             // lbl_Precio
             // 
@@ -283,13 +287,13 @@
             this.Controls.Add(this.tbx_url);
             this.Controls.Add(this.lbl_Url);
             this.Controls.Add(this.btn_Cancelar);
-            this.Controls.Add(this.tbx_Marca);
+            this.Controls.Add(this.cbo_Marca);
             this.Controls.Add(this.tbx_Precio);
             this.Controls.Add(this.tbx_Descripcion);
             this.Controls.Add(this.tbx_Nombre);
             this.Controls.Add(this.btn_Guardar);
             this.Controls.Add(this.tbx_Codigo);
-            this.Controls.Add(this.tbx_Categoria);
+            this.Controls.Add(this.cbo_Categoria);
             this.Controls.Add(this.lbl_Precio);
             this.Controls.Add(this.lbl_Categoria);
             this.Controls.Add(this.lbl_Marca);
@@ -305,6 +309,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Artículo";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.frm_Agregar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.articuloBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -314,13 +319,13 @@
         #endregion
 
         private System.Windows.Forms.Button btn_Cancelar;
-        public System.Windows.Forms.ComboBox tbx_Marca;
+        public System.Windows.Forms.ComboBox cbo_Marca;
         private System.Windows.Forms.TextBox tbx_Precio;
         private System.Windows.Forms.TextBox tbx_Descripcion;
         private System.Windows.Forms.TextBox tbx_Nombre;
         private System.Windows.Forms.Button btn_Guardar;
         private System.Windows.Forms.TextBox tbx_Codigo;
-        public System.Windows.Forms.ComboBox tbx_Categoria;
+        public System.Windows.Forms.ComboBox cbo_Categoria;
         private System.Windows.Forms.Label lbl_Precio;
         private System.Windows.Forms.Label lbl_Categoria;
         private System.Windows.Forms.Label lbl_Marca;

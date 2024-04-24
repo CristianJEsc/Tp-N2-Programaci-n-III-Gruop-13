@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Net;
 using dominio;
 using conexion;
+using System.Data.SqlTypes;
 
 namespace gestor
 {
@@ -49,6 +50,24 @@ namespace gestor
                 acceso.cerrarConexion();
             }
 
+        }
+
+        public void agregar(Articulo art_nuevo)
+        {
+            Conexion acceso = new Conexion();
+            try
+            {
+                acceso.setearConsulta("");
+                acceso.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                acceso.cerrarConexion();
+            }
         }
     }
 }
