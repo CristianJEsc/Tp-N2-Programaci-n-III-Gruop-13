@@ -19,7 +19,7 @@ namespace gestor
 
             try
             {
-                acceso.setearConsulta("select distinct( a.Id) as Id, Codigo, Nombre, a.Descripcion as Descripcion, case when m.Descripcion is null then '' else m.Descripcion end as Marca, case when c.Descripcion is null then '' else c.Descripcion end as Categoria, Precio, case when i.ImagenUrl is null then '' else i.ImagenUrl end as 'Url' from Articulos a left join Marcas m on m.Id=a.IdMarca left join Categorias c on c.Id=a.IdCategoria left join Imagenes i on a.id=i.IdArticulo"); //de momento la consulta repite el articulo si tiene mas de una imagen (ej: articulo id=2). hay que revisar esto
+                acceso.setearConsulta("select distinct(a.Id) as Id, Codigo, Nombre, a.Descripcion as Descripcion, m.Descripcion as Marca, c.Descripcion as Categoria, Precio, i.ImagenUrl as 'Url' from Articulos a left join Marcas m on m.Id=a.IdMarca left join Categorias c on c.Id=a.IdCategoria left join Imagenes i on a.id=i.IdArticulo"); //de momento la consulta repite el articulo si tiene mas de una imagen (ej: articulo id=2). hay que revisar esto
                 acceso.ejecutarLectura();
                 while (acceso.Lector.Read())
                 {
@@ -29,12 +29,15 @@ namespace gestor
                     aux.Nombre = (string)acceso.Lector["Nombre"];
                     aux.Descripcion = (string)acceso.Lector["Descripcion"];
                     aux.Marca = new Marca();
-                    aux.Marca.Descripcion = (string)acceso.Lector["Marca"];
+                    if(!(acceso.Lector["Marca"] is DBNull))
+                        aux.Marca.Descripcion = (string)acceso.Lector["Marca"];
                     aux.Categoria = new Categoria();
-                    aux.Categoria.Descripcion = (string)acceso.Lector["Categoria"];
+                    if(!(acceso.Lector["Categoria"] is DBNull))
+                        aux.Categoria.Descripcion = (string)acceso.Lector["Categoria"];
                     aux.Precio = (decimal)acceso.Lector["Precio"];
                     aux.Imagen = new Imagen();
-                    aux.Imagen.UrlLink = (string)acceso.Lector["Url"];
+                    if(!(acceso.Lector["Url"] is DBNull))
+                        aux.Imagen.UrlLink = (string)acceso.Lector["Url"];
 
                     lista.Add(aux);
                 }
