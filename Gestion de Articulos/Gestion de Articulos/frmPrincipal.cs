@@ -25,17 +25,22 @@ namespace Gestion_de_Articulos
 
         private void Principal_Load(object sender, EventArgs e)
         {
-            gestionArticulo lista = new gestionArticulo();
-            listaArt = lista.listar();
-            dgv_Articulos.DataSource = listaArt;
-            dgv_Articulos.Columns["Imagen"].Visible = false;
-            cargarImagen(listaArt[0].Imagen.UrlLink);
+            cargar();
         }
 
         private void dgv_Articulos_SelectionChanged(object sender, EventArgs e)
         {
             Articulo seleccion = (Articulo)dgv_Articulos.CurrentRow.DataBoundItem;
             cargarImagen(seleccion.Imagen.UrlLink);
+        }
+
+        private void cargar()
+        {
+            gestionArticulo lista = new gestionArticulo();
+            listaArt = lista.listar();
+            dgv_Articulos.DataSource = listaArt;
+            dgv_Articulos.Columns["Imagen"].Visible = false;
+            cargarImagen(listaArt[0].Imagen.UrlLink);
         }
 
         private void cargarImagen(string imagen)
@@ -60,7 +65,9 @@ namespace Gestion_de_Articulos
         {
             frm_Agregar ventana = new frm_Agregar();
             ventana.ShowDialog();
+            cargar();
         }
+
 
         /*private void Principal_Load(object sender, EventArgs e)
         {//Cargador de Formulario

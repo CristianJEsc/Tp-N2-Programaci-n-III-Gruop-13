@@ -89,11 +89,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_Articulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Articulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgv_Articulos.Location = new System.Drawing.Point(26, 47);
             this.dgv_Articulos.Margin = new System.Windows.Forms.Padding(2);
+            this.dgv_Articulos.MultiSelect = false;
             this.dgv_Articulos.Name = "dgv_Articulos";
             this.dgv_Articulos.RowHeadersWidth = 62;
             this.dgv_Articulos.RowTemplate.Height = 28;
+            this.dgv_Articulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Articulos.Size = new System.Drawing.Size(549, 314);
             this.dgv_Articulos.TabIndex = 9;
             this.dgv_Articulos.SelectionChanged += new System.EventHandler(this.dgv_Articulos_SelectionChanged);
