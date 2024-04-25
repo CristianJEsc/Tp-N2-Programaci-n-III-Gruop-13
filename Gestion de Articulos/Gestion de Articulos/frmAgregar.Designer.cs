@@ -46,7 +46,9 @@
             this.lbl_Codigo = new System.Windows.Forms.Label();
             this.lbl_Url = new System.Windows.Forms.Label();
             this.tbx_url = new System.Windows.Forms.TextBox();
+            this.pbx_nuevo_art = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.articuloBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_nuevo_art)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Cancelar
@@ -57,7 +59,7 @@
             this.btn_Cancelar.Location = new System.Drawing.Point(253, 355);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(92, 35);
-            this.btn_Cancelar.TabIndex = 6;
+            this.btn_Cancelar.TabIndex = 8;
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = false;
             this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
@@ -105,7 +107,7 @@
             this.tbx_Descripcion.Multiline = true;
             this.tbx_Descripcion.Name = "tbx_Descripcion";
             this.tbx_Descripcion.Size = new System.Drawing.Size(181, 144);
-            this.tbx_Descripcion.TabIndex = 5;
+            this.tbx_Descripcion.TabIndex = 6;
             // 
             // tbx_Nombre
             // 
@@ -189,7 +191,7 @@
             this.lbl_Categoria.Name = "lbl_Categoria";
             this.lbl_Categoria.Size = new System.Drawing.Size(105, 24);
             this.lbl_Categoria.TabIndex = 57;
-            this.lbl_Categoria.Text = "Categoria:";
+            this.lbl_Categoria.Text = "Categoría:";
             // 
             // lbl_Marca
             // 
@@ -219,7 +221,7 @@
             this.lbl_Descripcion.Name = "lbl_Descripcion";
             this.lbl_Descripcion.Size = new System.Drawing.Size(127, 24);
             this.lbl_Descripcion.TabIndex = 55;
-            this.lbl_Descripcion.Text = "Descripcion:";
+            this.lbl_Descripcion.Text = "Descripción:";
             // 
             // lbl_Nombre
             // 
@@ -249,7 +251,7 @@
             this.lbl_Codigo.Name = "lbl_Codigo";
             this.lbl_Codigo.Size = new System.Drawing.Size(83, 24);
             this.lbl_Codigo.TabIndex = 53;
-            this.lbl_Codigo.Text = "Codigo:";
+            this.lbl_Codigo.Text = "Código:";
             // 
             // lbl_Url
             // 
@@ -277,13 +279,24 @@
             this.tbx_url.Multiline = true;
             this.tbx_url.Name = "tbx_url";
             this.tbx_url.Size = new System.Drawing.Size(182, 25);
-            this.tbx_url.TabIndex = 60;
+            this.tbx_url.TabIndex = 5;
+            this.tbx_url.Leave += new System.EventHandler(this.tbx_url_Leave);
+            // 
+            // pbx_nuevo_art
+            // 
+            this.pbx_nuevo_art.Location = new System.Drawing.Point(392, 20);
+            this.pbx_nuevo_art.Name = "pbx_nuevo_art";
+            this.pbx_nuevo_art.Size = new System.Drawing.Size(306, 329);
+            this.pbx_nuevo_art.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbx_nuevo_art.TabIndex = 61;
+            this.pbx_nuevo_art.TabStop = false;
             // 
             // frm_Agregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 402);
+            this.ClientSize = new System.Drawing.Size(723, 402);
+            this.Controls.Add(this.pbx_nuevo_art);
             this.Controls.Add(this.tbx_url);
             this.Controls.Add(this.lbl_Url);
             this.Controls.Add(this.btn_Cancelar);
@@ -307,10 +320,11 @@
             this.Name = "frm_Agregar";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Agregar Artículo";
+            this.Text = "Nuevo Artículo";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.frm_Agregar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.articuloBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_nuevo_art)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,6 +349,7 @@
         private System.Windows.Forms.BindingSource articuloBindingSource;
         private System.Windows.Forms.Label lbl_Url;
         private System.Windows.Forms.TextBox tbx_url;
+        private System.Windows.Forms.PictureBox pbx_nuevo_art;
     }
 }
 

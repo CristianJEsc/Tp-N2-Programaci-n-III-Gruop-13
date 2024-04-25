@@ -61,5 +61,22 @@ namespace Gestion_de_Articulos
         {
             Close();
         }
+
+        private void tbx_url_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(tbx_url.Text);
+        }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbx_nuevo_art.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+                pbx_nuevo_art.Load("https://t4.ftcdn.net/jpg/05/17/53/57/360_F_517535712_q7f9QC9X6TQxWi6xYZZbMmw5cnLMr279.jpg");
+            }
+        }
     }
 }
