@@ -38,7 +38,15 @@ namespace Gestion_de_Articulos
         {
             gestionArticulo lista = new gestionArticulo();
             listaArt = lista.listar();
-            dgv_Articulos.DataSource = listaArt;
+            try
+            {
+                dgv_Articulos.DataSource = listaArt;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
             dgv_Articulos.Columns["Imagen"].Visible = false;
             cargarImagen(listaArt[0].Imagen.UrlLink);
         }

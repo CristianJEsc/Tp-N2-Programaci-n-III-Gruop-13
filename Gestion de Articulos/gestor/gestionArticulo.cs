@@ -56,12 +56,14 @@ namespace gestor
 
         }
 
-        public void agregar(Articulo art_nuevo)
+        public void agregar(Articulo nuevo)
         {
             Conexion acceso = new Conexion();
             try
             {
-                acceso.setearConsulta("");
+                acceso.setearConsulta("Insert into ARTICULOS(Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio)values('" + nuevo.Codigo + "', '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', @IdMarca, @IdCategoria, " + nuevo.Precio + " )");
+                acceso.setearParametro("@IdMarca", nuevo.Marca.IdMarca);
+                acceso.setearParametro("@IdCategoria", nuevo.Categoria.IdCategoria);
                 acceso.ejecutarAccion();
             }
             catch (Exception ex)

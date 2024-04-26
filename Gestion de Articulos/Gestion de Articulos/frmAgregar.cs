@@ -49,7 +49,7 @@ namespace Gestion_de_Articulos
                 art.Imagen.UrlLink = tbx_url.Text;
 
                 gestion.agregar(art);
-                MessageBox.Show("El artículo fue ingresado exitosamente");
+                MessageBox.Show("El artículo se guardó exitosamente");
                 Close();
             }
             catch (Exception ex)
