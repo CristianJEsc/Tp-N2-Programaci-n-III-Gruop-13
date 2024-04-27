@@ -29,8 +29,8 @@ namespace conexion
 
         public Conexion()
         {
-            conexion = new SqlConnection("server=192.168.1.2,1433\\sql-server-express; database=CATALOGO_P3_DB; integrated security = false; user=SA; password=Cor12345!; "); //Cristian: comentar esta linea y descomentar la siguiente
-            //conexion = new SqlConnection("server=CristianEsc\\SQLEXPRESS01; database=CATALOGO_P3_DB; Trusted_Connection=true; "); //Franco: comentar esta línea y descomentar la anterior
+            //conexion = new SqlConnection("server=192.168.1.2,1433\\sql-server-express; database=CATALOGO_P3_DB; integrated security = false; user=SA; password=Cor12345!; "); //Cristian: comentar esta linea y descomentar la siguiente
+            conexion = new SqlConnection("server=CristianEsc\\SQLEXPRESS01; database=CATALOGO_P3_DB; Trusted_Connection=true; "); //Franco: comentar esta línea y descomentar la anterior
             comando = new SqlCommand();
         }
 
@@ -83,5 +83,6 @@ namespace conexion
             conexion.Close();
 
         }
+
     }
 }

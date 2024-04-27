@@ -26,29 +26,44 @@ namespace Gestion_de_Articulos
         private void Principal_Load(object sender, EventArgs e)
         {
             cargar();
+            cbo_Campo.Items.Add("Nombre");
+            cbo_Campo.Items.Add("Marca");
+            cbo_Campo.Items.Add("Categoria");
+            cbo_Campo.Items.Add("Precio");
+
         }
 
         private void dgv_Articulos_SelectionChanged(object sender, EventArgs e)
         {
-            Articulo seleccion = (Articulo)dgv_Articulos.CurrentRow.DataBoundItem;
-            cargarImagen(seleccion.Imagen.UrlLink);
+            if (dgv_Articulos.CurrentRow != null) 
+            {
+                Articulo seleccion = (Articulo)dgv_Articulos.CurrentRow.DataBoundItem;
+                cargarImagen(seleccion.Imagen.UrlLink);
+            }
+            
         }
 
         private void cargar()
         {
             gestionArticulo lista = new gestionArticulo();
-            listaArt = lista.listar();
+            
             try
             {
+                listaArt = lista.listar();
                 dgv_Articulos.DataSource = listaArt;
+                ocultarColumnas();
+                cargarImagen(listaArt[0].Imagen.UrlLink);
             }
             catch (Exception)
             {
 
                 throw;
             }
+        }
+        private void ocultarColumnas() 
+        {
             dgv_Articulos.Columns["Imagen"].Visible = false;
-            cargarImagen(listaArt[0].Imagen.UrlLink);
+            dgv_Articulos.Columns["Id"].Visible = false;
         }
 
         private void cargarImagen(string imagen)
@@ -76,64 +91,82 @@ namespace Gestion_de_Articulos
             cargar();
         }
 
-
-        /*private void Principal_Load(object sender, EventArgs e)
-        {//Cargador de Formulario
-            Conexion.Conectar();
-            dgv_Articulos.DataSource = Index();
-        }
-        // Metodo para cargar los datos del Data Grid View
-        public DataTable Index()
+        private void tb_Buscador_TextChanged(object sender, EventArgs e)
         {
-            Conexion.Conectar();
-            DataTable datatabe = new DataTable();
-            string sql = "SELECT * FROM Articulos";
-
-            SqlCommand cmd = new SqlCommand(sql, Conexion.Conectar());
-
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-
-            adapter.Fill(datatabe);
-
-            return datatabe;
-
+            List<Articulo> listafiltrada;
+            string filtro = tb_Buscador.Text;
+            if (filtro != "")
+            {
+                listafiltrada = listaArt.FindAll(x => x.Nombre.ToLower().Contains(filtro.ToLower()) || x.Marca.ToString().ToLower().Contains(filtro.ToLower()) || x.Descripcion.ToLower().Contains(filtro.ToLower()) || x.Categoria.ToString().ToLower().Contains(filtro.ToLower()));
+            }
+            else
+            {
+                listafiltrada = listaArt;
+            }
+            dgv_Articulos.DataSource = null;
+            dgv_Articulos.DataSource = listafiltrada;
+            ocultarColumnas();
         }
-        //Agregar
-        private void btn_Agregar_Click(object sender, EventArgs e)
+
+        private void cbo_Campo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cbo_Campo.SelectedItem.ToString();
+            if (opcion == "Precio")
+            {
+                cbo_Criterio.Items.Clear();
+                cbo_Criterio.Items.Add("Mayor a");
+                cbo_Criterio.Items.Add("Menor a");
+                cbo_Criterio.Items.Add("Igual a");
+            }
+            else if (opcion == "Nombre")
+            {
+                cbo_Criterio.Items.Clear();
+                cbo_Criterio.Items.Add("Comienza con");
+                cbo_Criterio.Items.Add("Termina con");
+                cbo_Criterio.Items.Add("Contiene");
+            }
+            else if (opcion == "Marca")
+            {
+                cbo_Criterio.Items.Clear();
+                cbo_Criterio.Items.Add("Comienza con");
+                cbo_Criterio.Items.Add("Termina con");
+                cbo_Criterio.Items.Add("Contiene");
+            }
+            else 
+            {
+                cbo_Criterio.Items.Clear();
+                cbo_Criterio.Items.Add("Comienza con");
+                cbo_Criterio.Items.Add("Termina con");
+                cbo_Criterio.Items.Add("Contiene");
+
+            }
+        }
+
+        private void btn_Filtrar_Click(object sender, EventArgs e)
         {
             try
             {
-                Conexion.Conectar();
 
-                string SQL_Agregar = @"
-                                INSERT INTO ARTICULOS(Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio)
-                                VALUES (@Codigo, @Nombre, @Descripcion, @IdMarca, @IdCategoria, @Precio)";
+                gestionArticulo articulo = new gestionArticulo();
+                if (cbo_Campo.SelectedItem == null || cbo_Criterio.SelectedItem == null)
+                {
+                    MessageBox.Show("Por favor seleccione un campo y un criterio para filtrar.");
+                    return;
+                }
 
-                SqlCommand command = new SqlCommand(SQL_Agregar, Conexion.Conectar());
-                command.Parameters.AddWithValue("@Codigo", tbx_Codigo.Text);
-                command.Parameters.AddWithValue("@Nombre", tbx_Nombre.Text);
-                command.Parameters.AddWithValue("@Descripcion", tbx_Descripcion.Text);
-                command.Parameters.AddWithValue("@IdMarca", int.Parse(cbx_Marca.Text));
-                command.Parameters.AddWithValue("@IdCategoria", int.Parse(cbx_Categoria.Text));
-                command.Parameters.AddWithValue("@Precio", decimal.Parse(tbx_Precio.Text));
+                string campo = cbo_Campo.SelectedItem.ToString();
+                string criterio = cbo_Criterio.SelectedItem.ToString();
+                string filtro = tbx_Filtro.Text;
 
-                //guardamos los datos ejecutando la consulta SQL
-                command.ExecuteNonQuery();
-                MessageBox.Show("Articulo Agregado correctamente");
-                dgv_Articulos.DataSource = Index();
+                dgv_Articulos.DataSource = articulo.filtrar(campo, criterio, filtro);
             }
-            catch (Exception error)
+
+            catch (Exception)
             {
-                MessageBox.Show(error.Message);
 
-                throw;
+                MessageBox.Show("Por favor añada los campos a filtrar");
             }
-            finally 
-            {
-                
-            }
-            
-
-        }*/
+        
+        }
     }
 }
