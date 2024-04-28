@@ -180,5 +180,11 @@ namespace Gestion_de_Articulos
             detalle.ShowDialog();
             cargar();
         }
+
+        private void btnMarcas_Click(object sender, EventArgs e)
+        {
+            Marcas fr = new Marcas();
+            fr.ShowDialog();
+        }
     }
 }

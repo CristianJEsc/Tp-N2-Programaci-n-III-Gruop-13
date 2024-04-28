@@ -46,6 +46,7 @@
             this.tbx_Filtro = new System.Windows.Forms.TextBox();
             this.lbl_Filtro = new System.Windows.Forms.Label();
             this.btn_Filtrar = new System.Windows.Forms.Button();
+            this.btnMarcas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Imagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Articulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articuloBindingSource)).BeginInit();
@@ -258,11 +259,25 @@
             this.btn_Filtrar.UseVisualStyleBackColor = false;
             this.btn_Filtrar.Click += new System.EventHandler(this.btn_Filtrar_Click);
             // 
+            // btnMarcas
+            // 
+            this.btnMarcas.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMarcas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnMarcas.Location = new System.Drawing.Point(581, 7);
+            this.btnMarcas.Name = "btnMarcas";
+            this.btnMarcas.Size = new System.Drawing.Size(92, 35);
+            this.btnMarcas.TabIndex = 75;
+            this.btnMarcas.Text = "Marcas";
+            this.btnMarcas.UseVisualStyleBackColor = false;
+            this.btnMarcas.Click += new System.EventHandler(this.btnMarcas_Click);
+            // 
             // frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(906, 456);
+            this.Controls.Add(this.btnMarcas);
             this.Controls.Add(this.btn_Filtrar);
             this.Controls.Add(this.tbx_Filtro);
             this.Controls.Add(this.lbl_Filtro);
@@ -287,7 +302,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CATÁLOGO";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.Principal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_Imagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Articulos)).EndInit();
@@ -315,6 +329,7 @@
         private System.Windows.Forms.TextBox tbx_Filtro;
         private System.Windows.Forms.Label lbl_Filtro;
         private System.Windows.Forms.Button btn_Filtrar;
+        private System.Windows.Forms.Button btnMarcas;
     }
 }
 

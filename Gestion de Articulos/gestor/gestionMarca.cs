@@ -40,5 +40,32 @@ namespace gestor
                 acceso.cerrarConexion();
             }
         }
+
+        public void EliminarMarca(int id)
+        {
+            Conexion datos = new Conexion();
+
+            try
+            {
+
+                datos.setearConsulta("delete from MARCAS where ID = @id ");
+                datos.setearParametro("id", id);
+                datos.ejecutarLectura();
+
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.ToString());
+            }
+
+            finally
+            {
+
+                datos.cerrarConexion();
+
+            }
+
+        }
     }
 }
