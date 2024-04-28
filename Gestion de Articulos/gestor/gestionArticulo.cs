@@ -59,17 +59,42 @@ namespace gestor
         public void agregar(Articulo nuevo)
         {
             Conexion acceso = new Conexion();
-            
             try
             {
-                acceso.setearConsulta("Insert into ARTICULOS(Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio )values('" + nuevo.Codigo + "', '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', @IdMarca, @IdCategoria, " + nuevo.Precio + " )");
+                acceso.setearConsulta("Insert into ARTICULOS(Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio)values('" + nuevo.Codigo + "', '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', @IdMarca, @IdCategoria, " + nuevo.Precio + " )");
                 acceso.setearParametro("@IdMarca", nuevo.Marca.IdMarca);
                 acceso.setearParametro("@IdCategoria", nuevo.Categoria.IdCategoria);
-        
                 acceso.ejecutarAccion();
             }
             catch (Exception ex)
             {
+                throw ex;
+            }
+            finally
+            {
+                acceso.cerrarConexion();
+            }
+        }
+        public void modificar(Articulo art)
+        {
+            Conexion acceso = new Conexion();
+            try
+            {
+                acceso.setearConsulta("update ARTICULOS set Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, IdMarca = @idmarca, IdCategoria = @idcategoria, Precio = @idprecio where Id = @id");
+                // acceso.setearConsulta("update IMAGENES set ImagenUrl = @imagenurl where IdArticulo = @id"); // hay que revisar esto
+                acceso.setearParametro("@codigo", art.Codigo);
+                acceso.setearParametro("@nombre", art.Nombre);
+                acceso.setearParametro("@descripcion", art.Descripcion);
+                acceso.setearParametro("@idmarca", art.Marca.IdMarca);
+                acceso.setearParametro("@idcategoria", art.Categoria.IdCategoria);
+                acceso.setearParametro("@idprecio", art.Precio);
+                //acceso.setearParametro("@imagenurl", art.Imagen.UrlLink);// hay que revisar esto
+                acceso.setearParametro("@id", art.Id);
+                acceso.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
                 throw ex;
             }
             finally

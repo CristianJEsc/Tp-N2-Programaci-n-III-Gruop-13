@@ -78,12 +78,6 @@ namespace Gestion_de_Articulos
             }
         }
 
-        private void btn_Editar_Click(object sender, EventArgs e)
-        {
-            frm_Editar ventana = new frm_Editar();
-            ventana.ShowDialog();
-        }
-
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
             frm_Agregar ventana = new frm_Agregar();
@@ -167,6 +161,15 @@ namespace Gestion_de_Articulos
                 MessageBox.Show("Por favor añada los campos a filtrar");
             }
         
+        }
+
+        private void btn_Editar_Click_1(object sender, EventArgs e)
+        {
+            Articulo seleccionado;
+            seleccionado = (Articulo)dgv_Articulos.CurrentRow.DataBoundItem;
+            frm_Agregar modificar = new frm_Agregar(seleccionado);
+            modificar.ShowDialog();
+            cargar();
         }
     }
 }

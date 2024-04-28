@@ -15,9 +15,17 @@ namespace Gestion_de_Articulos
 {
     public partial class frm_Agregar : Form
     {
+        private Articulo articulo = null;
         public frm_Agregar()
         {
             InitializeComponent();
+        }
+
+        public frm_Agregar(Articulo articulo)
+        {
+            InitializeComponent();
+            this.articulo = articulo;
+            Text = "Editar artículo";
         }
         private void frm_Agregar_Load(object sender, EventArgs e)
         {
@@ -26,7 +34,22 @@ namespace Gestion_de_Articulos
             try
             {
                 cbo_Marca.DataSource = marca.listar();
+                cbo_Marca.ValueMember = "IdMarca";
+                cbo_Marca.DisplayMember = "Descripcion";
                 cbo_Categoria.DataSource = cat.listar();
+                cbo_Categoria.ValueMember = "IdCategoria";
+                cbo_Categoria.DisplayMember = "Descripcion";
+                if (articulo != null)
+                {
+                    tbx_Codigo.Text = articulo.Codigo;
+                    tbx_Nombre.Text = articulo.Nombre;
+                    tbx_Descripcion.Text = articulo.Descripcion;
+                    cbo_Marca.SelectedValue = articulo.Marca.IdMarca;
+                    cbo_Categoria.SelectedValue = articulo.Categoria.IdCategoria;
+                    tbx_Precio.Text = articulo.Precio.ToString();
+                    tbx_url.Text = articulo.Imagen.UrlLink;
+                    cargarImagen(articulo.Imagen.UrlLink);
+                }
             }
             catch (Exception ex)
             {
@@ -35,21 +58,29 @@ namespace Gestion_de_Articulos
         }
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-            Articulo art = new Articulo();
             gestionArticulo gestion = new gestionArticulo();
             try
             {
-                art.Codigo = tbx_Codigo.Text;
-                art.Nombre = tbx_Nombre.Text;
-                art.Descripcion = tbx_Descripcion.Text;
-                art.Marca = (Marca)cbo_Marca.SelectedItem;
-                art.Categoria = (Categoria)cbo_Categoria.SelectedItem;
-                art.Precio = decimal.Parse(tbx_Precio.Text);
-                art.Imagen = new Imagen();
-                art.Imagen.UrlLink = tbx_url.Text;
-
-                gestion.agregar(art);
-                MessageBox.Show("El artículo se guardó exitosamente");
+                if (articulo == null)
+                    articulo = new Articulo();
+                articulo.Codigo = tbx_Codigo.Text;
+                articulo.Nombre = tbx_Nombre.Text;
+                articulo.Descripcion = tbx_Descripcion.Text;
+                articulo.Marca = (Marca)cbo_Marca.SelectedItem;
+                articulo.Categoria = (Categoria)cbo_Categoria.SelectedItem;
+                articulo.Precio = decimal.Parse(tbx_Precio.Text);
+                articulo.Imagen = new Imagen();
+                articulo.Imagen.UrlLink = tbx_url.Text;
+                if (articulo.Id != 0)
+                {
+                    gestion.modificar(articulo);
+                    MessageBox.Show("El artículo se editó exitosamente");
+                }
+                else
+                {
+                    gestion.agregar(articulo);
+                    MessageBox.Show("El artículo se guardó exitosamente");
+                }
                 Close();
             }
             catch (Exception ex)

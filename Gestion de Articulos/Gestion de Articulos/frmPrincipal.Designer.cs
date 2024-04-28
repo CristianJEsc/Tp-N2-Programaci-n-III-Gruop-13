@@ -68,7 +68,7 @@
             // 
             this.pb_Imagen.InitialImage = null;
             this.pb_Imagen.Location = new System.Drawing.Point(577, 47);
-            this.pb_Imagen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pb_Imagen.Margin = new System.Windows.Forms.Padding(2);
             this.pb_Imagen.Name = "pb_Imagen";
             this.pb_Imagen.Size = new System.Drawing.Size(297, 314);
             this.pb_Imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -92,7 +92,7 @@
             this.dgv_Articulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Articulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgv_Articulos.Location = new System.Drawing.Point(26, 47);
-            this.dgv_Articulos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_Articulos.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_Articulos.MultiSelect = false;
             this.dgv_Articulos.Name = "dgv_Articulos";
             this.dgv_Articulos.RowHeadersWidth = 62;
@@ -113,7 +113,7 @@
             this.btn_Editar.TabIndex = 7;
             this.btn_Editar.Text = "Editar";
             this.btn_Editar.UseVisualStyleBackColor = false;
-            this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
+            this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click_1);
             // 
             // tb_Buscador
             // 
@@ -152,7 +152,7 @@
             this.cbo_Campo.ForeColor = System.Drawing.Color.SteelBlue;
             this.cbo_Campo.FormattingEnabled = true;
             this.cbo_Campo.Location = new System.Drawing.Point(97, 413);
-            this.cbo_Campo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbo_Campo.Margin = new System.Windows.Forms.Padding(2);
             this.cbo_Campo.Name = "cbo_Campo";
             this.cbo_Campo.Size = new System.Drawing.Size(182, 28);
             this.cbo_Campo.TabIndex = 64;
@@ -183,7 +183,7 @@
             this.cbo_Criterio.ForeColor = System.Drawing.Color.SteelBlue;
             this.cbo_Criterio.FormattingEnabled = true;
             this.cbo_Criterio.Location = new System.Drawing.Point(359, 413);
-            this.cbo_Criterio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbo_Criterio.Margin = new System.Windows.Forms.Padding(2);
             this.cbo_Criterio.Name = "cbo_Criterio";
             this.cbo_Criterio.Size = new System.Drawing.Size(182, 28);
             this.cbo_Criterio.TabIndex = 66;
@@ -279,7 +279,7 @@
             this.Controls.Add(this.btn_Editar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_Principal";
