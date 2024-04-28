@@ -28,19 +28,58 @@ namespace Gestion_de_Articulos
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            try
+
+            
+
+            if (string.IsNullOrEmpty(txbDescripcion.Text))
             {
 
-           gestionMarca.AgregarMarca(txbDescripcion.Text);
-                MessageBox.Show("Marca agregada correctamente","Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+
+                MessageBox.Show("LA DESCRIPCION NO PUEDE ESTAR VACIA", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            catch (Exception)
+            else
             {
+                if (ValidarMarca(txbDescripcion.Text))
+                {
+                    MessageBox.Show("LA MARCA YA EXISTE", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                try
+                {
 
-                throw;
+
+                    gestionMarca.AgregarMarca(txbDescripcion.Text);
+                    MessageBox.Show("Marca agregada correctamente", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
             }
         }
+
+        public bool ValidarMarca(string nombre)
+        {
+            List<string> marcas = new List<string>();
+            bool validar = false;
+            marcas = gestionMarca.ListaMarcas();
+            foreach (var item in marcas)
+            {
+                if (item.Equals(nombre.ToUpper()))
+                {
+                    validar = true;
+                }
+
+            }
+            
+
+            return validar;
+
+        }
+
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {

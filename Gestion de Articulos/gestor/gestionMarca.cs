@@ -42,18 +42,18 @@ namespace gestor
         }
 
         public void AgregarMarca(string descripcion) {
-        Conexion conexion = new Conexion();
+            Conexion conexion = new Conexion();
             conexion.setearConsulta("  INSERT INTO MARCAS (Descripcion) VALUES (@descripcion)");
             conexion.setearParametro("descripcion", descripcion);
             conexion.ejecutarLectura();
 
             conexion.cerrarConexion();
-        
-        
-        
+
+
+
         }
 
-        public decimal  ProximoID()
+        public decimal ProximoID()
         {
             decimal id = 0;
             Conexion conexion = new Conexion();
@@ -63,6 +63,26 @@ namespace gestor
             id = (decimal)conexion.Lector["ProximoId"];
             return id;
         }
+
+        public List<String> ListaMarcas()
+        {
+        List<string> marcas = new List<string>();
+            Marca aux = new Marca();
+            Conexion datos = new Conexion();
+            datos.setearConsulta("select Descripcion from MARCAS");
+            datos.ejecutarLectura();
+            while (datos.Lector.Read())
+            {
+
+                aux.Descripcion = (string)datos.Lector["Descripcion"];
+
+               marcas.Add(aux.Descripcion.ToUpper());
+            }
+
+
+            return marcas;
+        }
+
 
         public void EliminarMarca(int id)
         {
