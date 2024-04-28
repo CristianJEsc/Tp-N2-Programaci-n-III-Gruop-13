@@ -47,6 +47,8 @@
             this.lbl_Filtro = new System.Windows.Forms.Label();
             this.btn_Filtrar = new System.Windows.Forms.Button();
             this.btnMarcas = new System.Windows.Forms.Button();
+            this.btnCambiarImagenIzquierda = new System.Windows.Forms.Button();
+            this.btnCambiarImagenDerecha = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Imagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Articulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articuloBindingSource)).BeginInit();
@@ -69,7 +71,7 @@
             // 
             this.pb_Imagen.InitialImage = null;
             this.pb_Imagen.Location = new System.Drawing.Point(577, 47);
-            this.pb_Imagen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pb_Imagen.Margin = new System.Windows.Forms.Padding(2);
             this.pb_Imagen.Name = "pb_Imagen";
             this.pb_Imagen.Size = new System.Drawing.Size(297, 314);
             this.pb_Imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -94,7 +96,7 @@
             this.dgv_Articulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Articulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgv_Articulos.Location = new System.Drawing.Point(26, 47);
-            this.dgv_Articulos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_Articulos.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_Articulos.MultiSelect = false;
             this.dgv_Articulos.Name = "dgv_Articulos";
             this.dgv_Articulos.RowHeadersWidth = 62;
@@ -155,7 +157,7 @@
             this.cbo_Campo.ForeColor = System.Drawing.Color.SteelBlue;
             this.cbo_Campo.FormattingEnabled = true;
             this.cbo_Campo.Location = new System.Drawing.Point(108, 413);
-            this.cbo_Campo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbo_Campo.Margin = new System.Windows.Forms.Padding(2);
             this.cbo_Campo.Name = "cbo_Campo";
             this.cbo_Campo.Size = new System.Drawing.Size(135, 28);
             this.cbo_Campo.TabIndex = 6;
@@ -186,7 +188,7 @@
             this.cbo_Criterio.ForeColor = System.Drawing.Color.SteelBlue;
             this.cbo_Criterio.FormattingEnabled = true;
             this.cbo_Criterio.Location = new System.Drawing.Point(345, 413);
-            this.cbo_Criterio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbo_Criterio.Margin = new System.Windows.Forms.Padding(2);
             this.cbo_Criterio.Name = "cbo_Criterio";
             this.cbo_Criterio.Size = new System.Drawing.Size(135, 28);
             this.cbo_Criterio.TabIndex = 7;
@@ -273,11 +275,33 @@
             this.btnMarcas.UseVisualStyleBackColor = false;
             this.btnMarcas.Click += new System.EventHandler(this.btnMarcas_Click);
             // 
+            // btnCambiarImagenIzquierda
+            // 
+            this.btnCambiarImagenIzquierda.Location = new System.Drawing.Point(690, 369);
+            this.btnCambiarImagenIzquierda.Name = "btnCambiarImagenIzquierda";
+            this.btnCambiarImagenIzquierda.Size = new System.Drawing.Size(29, 29);
+            this.btnCambiarImagenIzquierda.TabIndex = 76;
+            this.btnCambiarImagenIzquierda.Text = "<";
+            this.btnCambiarImagenIzquierda.UseVisualStyleBackColor = true;
+            this.btnCambiarImagenIzquierda.Click += new System.EventHandler(this.btnCambiarImagenIzquierda_Click);
+            // 
+            // btnCambiarImagenDerecha
+            // 
+            this.btnCambiarImagenDerecha.Location = new System.Drawing.Point(763, 369);
+            this.btnCambiarImagenDerecha.Name = "btnCambiarImagenDerecha";
+            this.btnCambiarImagenDerecha.Size = new System.Drawing.Size(29, 29);
+            this.btnCambiarImagenDerecha.TabIndex = 77;
+            this.btnCambiarImagenDerecha.Text = ">";
+            this.btnCambiarImagenDerecha.UseVisualStyleBackColor = true;
+            this.btnCambiarImagenDerecha.Click += new System.EventHandler(this.btnCambiarImagenDerecha_Click);
+            // 
             // frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 456);
+            this.Controls.Add(this.btnCambiarImagenDerecha);
+            this.Controls.Add(this.btnCambiarImagenIzquierda);
             this.Controls.Add(this.btnMarcas);
             this.Controls.Add(this.btn_Filtrar);
             this.Controls.Add(this.tbx_Filtro);
@@ -296,7 +320,7 @@
             this.Controls.Add(this.btn_Editar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_Principal";
@@ -331,6 +355,8 @@
         private System.Windows.Forms.Label lbl_Filtro;
         private System.Windows.Forms.Button btn_Filtrar;
         private System.Windows.Forms.Button btnMarcas;
+        private System.Windows.Forms.Button btnCambiarImagenIzquierda;
+        private System.Windows.Forms.Button btnCambiarImagenDerecha;
     }
 }
 

@@ -31,8 +31,8 @@ namespace Gestion_de_Articulos
                 tbx_Marca.Text = articulo.Marca.Descripcion;
                 tbx_Categoria.Text = articulo.Categoria.Descripcion;
                 tbx_Precio.Text = articulo.Precio.ToString();
-                tbx_url.Text = articulo.Imagen.UrlLink;
-                cargarImagen(articulo.Imagen.UrlLink);
+                tbx_url.Text = articulo.imagenes[0];
+                cargarImagen(articulo.imagenes[0]);
             }
             catch (Exception ex)
             {

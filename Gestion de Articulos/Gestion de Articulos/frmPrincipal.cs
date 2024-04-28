@@ -21,6 +21,7 @@ namespace Gestion_de_Articulos
 
     {
         private List<Articulo> listaArt;
+        private int imagenActual;
         gestionArticulo GestArt = new gestionArticulo();
         public frm_Principal()
         {
@@ -42,7 +43,8 @@ namespace Gestion_de_Articulos
             if (dgv_Articulos.CurrentRow != null) 
             {
                 Articulo seleccion = (Articulo)dgv_Articulos.CurrentRow.DataBoundItem;
-                cargarImagen(seleccion.Imagen.UrlLink);
+                cargarImagen(seleccion.imagenes[0].ToString());
+                imagenActual = 0;
 
             }
             
@@ -54,10 +56,10 @@ namespace Gestion_de_Articulos
             
             try
             {
-                listaArt = lista.listar();
+                listaArt = GestArt.listar();
                 dgv_Articulos.DataSource = listaArt;
                 ocultarColumnas();
-                cargarImagen(listaArt[0].Imagen.UrlLink);
+                cargarImagen(Convert.ToString(listaArt[0].imagenes));
             }
             catch (Exception)
             {
@@ -229,6 +231,50 @@ namespace Gestion_de_Articulos
             else
             {
                 return;
+            }
+        }
+
+        private void btnCambiarImagenIzquierda_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Articulo seleccionado = (Articulo)dgv_Articulos.CurrentRow.DataBoundItem;
+                cargarImagen(seleccionado.imagenes[imagenActual - 1]);
+                imagenActual--;
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                return;
+            }
+            catch (NullReferenceException)
+            {
+                return;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnCambiarImagenDerecha_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Articulo seleccionado = (Articulo)dgv_Articulos.CurrentRow.DataBoundItem;
+                cargarImagen(seleccionado.imagenes[imagenActual + 1]);
+                imagenActual++;
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                return;
+            }
+            catch (NullReferenceException)
+            {
+                return;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
     }

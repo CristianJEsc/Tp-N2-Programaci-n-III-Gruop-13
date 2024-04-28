@@ -47,8 +47,8 @@ namespace Gestion_de_Articulos
                     cbo_Marca.SelectedValue = articulo.Marca.IdMarca;
                     cbo_Categoria.SelectedValue = articulo.Categoria.IdCategoria;
                     tbx_Precio.Text = articulo.Precio.ToString();
-                    tbx_url.Text = articulo.Imagen.UrlLink;
-                    cargarImagen(articulo.Imagen.UrlLink);
+                    tbx_url.Text = articulo.imagenes[0];
+                    cargarImagen(articulo.imagenes[0]);
                 }
             }
             catch (Exception ex)
@@ -70,7 +70,7 @@ namespace Gestion_de_Articulos
                 articulo.Categoria = (Categoria)cbo_Categoria.SelectedItem;
                 articulo.Precio = decimal.Parse(tbx_Precio.Text);
                 articulo.Imagen = new Imagen();
-                articulo.Imagen.UrlLink = tbx_url.Text;
+                articulo.imagenes[0] = tbx_url.Text;
                 if (articulo.Id != 0)
                 {
                     gestion.modificar(articulo);

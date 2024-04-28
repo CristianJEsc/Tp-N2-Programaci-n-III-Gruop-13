@@ -21,7 +21,7 @@ namespace dominio
         [DisplayName("Categoría")]
         public Categoria Categoria { get; set; }
         public decimal Precio { get; set; }
-
+        public List<string> imagenes { get; set; }
         //public List<Imagen> Imagenes { get; set; }
         public Imagen Imagen { get; set; }
 
