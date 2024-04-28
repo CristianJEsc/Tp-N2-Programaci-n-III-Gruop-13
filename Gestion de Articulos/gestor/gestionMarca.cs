@@ -83,6 +83,15 @@ namespace gestor
             return marcas;
         }
 
+        public void ModificarMarca(int id, string des)
+        {
+            Conexion datos = new Conexion();
+            datos.setearConsulta("update MARCAS set Descripcion = @descripcion where id = @id");
+            datos.setearParametro("descripcion", des);
+            datos.setearParametro("id", id);
+            datos.ejecutarLectura();
+            datos.cerrarConexion();
+        }
 
         public void EliminarMarca(int id)
         {

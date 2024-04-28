@@ -78,5 +78,14 @@ namespace Gestion_de_Articulos
             fr.Show();
             CargaDatos();
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+            int id = Convert.ToInt32(dgv_Marcas.CurrentRow.Cells[0].Value);
+            string nombre = Convert.ToString(dgv_Marcas.CurrentRow.Cells[1].Value);
+            ModificarMarca fr = new ModificarMarca(id, nombre);
+            fr.Show();
+        }
     }
 }
