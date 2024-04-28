@@ -43,6 +43,7 @@ namespace Gestion_de_Articulos
             {
                 Articulo seleccion = (Articulo)dgv_Articulos.CurrentRow.DataBoundItem;
                 cargarImagen(seleccion.Imagen.UrlLink);
+
             }
             
         }
@@ -169,20 +170,34 @@ namespace Gestion_de_Articulos
 
         private void btn_Editar_Click_1(object sender, EventArgs e)
         {
-            Articulo seleccionado;
-            seleccionado = (Articulo)dgv_Articulos.CurrentRow.DataBoundItem;
-            frm_Agregar modificar = new frm_Agregar(seleccionado);
-            modificar.ShowDialog();
-            cargar();
+            if (dgv_Articulos.CurrentRow != null)
+            {
+                Articulo seleccionado;
+                seleccionado = (Articulo)dgv_Articulos.CurrentRow.DataBoundItem;
+                frm_Agregar modificar = new frm_Agregar(seleccionado);
+                modificar.ShowDialog();
+                cargar();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un Artículo");
+            }
         }
 
         private void btn_Detalle_Click(object sender, EventArgs e)
         {
-            Articulo seleccionado;
-            seleccionado = (Articulo)dgv_Articulos.CurrentRow.DataBoundItem;
-            frm_Detalle detalle = new frm_Detalle(seleccionado);
-            detalle.ShowDialog();
-            cargar();
+            if (dgv_Articulos.CurrentRow != null)
+            {
+                Articulo seleccionado;
+                seleccionado = (Articulo)dgv_Articulos.CurrentRow.DataBoundItem;
+                frm_Detalle detalle = new frm_Detalle(seleccionado);
+                detalle.ShowDialog();
+                cargar();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un Artículo");
+            }
         }
 
         private void btnMarcas_Click(object sender, EventArgs e)

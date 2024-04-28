@@ -83,9 +83,12 @@ namespace Gestion_de_Articulos
                 }
                 Close();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Por favor complete los campos correctamente");
+
+                lbl_Ex_Precio.Text = "Solo numeros";
+                lbl_Ex_Descripcion.Text = "Maximo 50 caracteres";
             }
         }
         private void btn_Cancelar_Click(object sender, EventArgs e)

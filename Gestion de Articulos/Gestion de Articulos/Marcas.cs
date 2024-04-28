@@ -66,5 +66,10 @@ namespace Gestion_de_Articulos
                 return;
             }
         }
+
+        private void btn_Cerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

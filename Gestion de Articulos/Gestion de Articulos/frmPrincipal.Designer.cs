@@ -57,7 +57,7 @@
             this.btn_Agregar.BackColor = System.Drawing.Color.SteelBlue;
             this.btn_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Agregar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Agregar.Location = new System.Drawing.Point(178, 366);
+            this.btn_Agregar.Location = new System.Drawing.Point(123, 366);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(92, 35);
             this.btn_Agregar.TabIndex = 3;
@@ -69,7 +69,7 @@
             // 
             this.pb_Imagen.InitialImage = null;
             this.pb_Imagen.Location = new System.Drawing.Point(577, 47);
-            this.pb_Imagen.Margin = new System.Windows.Forms.Padding(2);
+            this.pb_Imagen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pb_Imagen.Name = "pb_Imagen";
             this.pb_Imagen.Size = new System.Drawing.Size(297, 314);
             this.pb_Imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -81,7 +81,7 @@
             this.btn_Eliminar.BackColor = System.Drawing.Color.SteelBlue;
             this.btn_Eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Eliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Eliminar.Location = new System.Drawing.Point(483, 366);
+            this.btn_Eliminar.Location = new System.Drawing.Point(318, 366);
             this.btn_Eliminar.Name = "btn_Eliminar";
             this.btn_Eliminar.Size = new System.Drawing.Size(92, 35);
             this.btn_Eliminar.TabIndex = 5;
@@ -94,7 +94,7 @@
             this.dgv_Articulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Articulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgv_Articulos.Location = new System.Drawing.Point(26, 47);
-            this.dgv_Articulos.Margin = new System.Windows.Forms.Padding(2);
+            this.dgv_Articulos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgv_Articulos.MultiSelect = false;
             this.dgv_Articulos.Name = "dgv_Articulos";
             this.dgv_Articulos.RowHeadersWidth = 62;
@@ -109,7 +109,7 @@
             this.btn_Editar.BackColor = System.Drawing.Color.SteelBlue;
             this.btn_Editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Editar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Editar.Location = new System.Drawing.Point(333, 366);
+            this.btn_Editar.Location = new System.Drawing.Point(221, 366);
             this.btn_Editar.Name = "btn_Editar";
             this.btn_Editar.Size = new System.Drawing.Size(92, 35);
             this.btn_Editar.TabIndex = 4;
@@ -154,10 +154,10 @@
             this.cbo_Campo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cbo_Campo.ForeColor = System.Drawing.Color.SteelBlue;
             this.cbo_Campo.FormattingEnabled = true;
-            this.cbo_Campo.Location = new System.Drawing.Point(97, 413);
-            this.cbo_Campo.Margin = new System.Windows.Forms.Padding(2);
+            this.cbo_Campo.Location = new System.Drawing.Point(108, 413);
+            this.cbo_Campo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbo_Campo.Name = "cbo_Campo";
-            this.cbo_Campo.Size = new System.Drawing.Size(182, 28);
+            this.cbo_Campo.Size = new System.Drawing.Size(135, 28);
             this.cbo_Campo.TabIndex = 6;
             this.cbo_Campo.SelectedIndexChanged += new System.EventHandler(this.cbo_Campo_SelectedIndexChanged);
             // 
@@ -185,10 +185,10 @@
             this.cbo_Criterio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cbo_Criterio.ForeColor = System.Drawing.Color.SteelBlue;
             this.cbo_Criterio.FormattingEnabled = true;
-            this.cbo_Criterio.Location = new System.Drawing.Point(359, 413);
-            this.cbo_Criterio.Margin = new System.Windows.Forms.Padding(2);
+            this.cbo_Criterio.Location = new System.Drawing.Point(345, 413);
+            this.cbo_Criterio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbo_Criterio.Name = "cbo_Criterio";
-            this.cbo_Criterio.Size = new System.Drawing.Size(182, 28);
+            this.cbo_Criterio.Size = new System.Drawing.Size(135, 28);
             this.cbo_Criterio.TabIndex = 7;
             // 
             // lbl_Criterio
@@ -199,7 +199,7 @@
             this.lbl_Criterio.AutoSize = true;
             this.lbl_Criterio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.lbl_Criterio.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lbl_Criterio.Location = new System.Drawing.Point(281, 417);
+            this.lbl_Criterio.Location = new System.Drawing.Point(258, 413);
             this.lbl_Criterio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Criterio.Name = "lbl_Criterio";
             this.lbl_Criterio.Size = new System.Drawing.Size(83, 24);
@@ -265,7 +265,7 @@
             this.btnMarcas.BackColor = System.Drawing.Color.SteelBlue;
             this.btnMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMarcas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnMarcas.Location = new System.Drawing.Point(581, 7);
+            this.btnMarcas.Location = new System.Drawing.Point(481, 366);
             this.btnMarcas.Name = "btnMarcas";
             this.btnMarcas.Size = new System.Drawing.Size(92, 35);
             this.btnMarcas.TabIndex = 75;
@@ -277,7 +277,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(906, 456);
+            this.ClientSize = new System.Drawing.Size(900, 456);
             this.Controls.Add(this.btnMarcas);
             this.Controls.Add(this.btn_Filtrar);
             this.Controls.Add(this.tbx_Filtro);
@@ -296,13 +296,13 @@
             this.Controls.Add(this.btn_Editar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_Principal";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CATÁLOGO";
+            this.Text = "Catálogo";
             this.Load += new System.EventHandler(this.Principal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_Imagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Articulos)).EndInit();
