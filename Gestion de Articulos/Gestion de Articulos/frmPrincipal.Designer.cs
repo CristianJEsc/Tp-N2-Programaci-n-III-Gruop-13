@@ -87,6 +87,7 @@
             this.btn_Eliminar.TabIndex = 5;
             this.btn_Eliminar.Text = "Eliminar";
             this.btn_Eliminar.UseVisualStyleBackColor = false;
+            this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
             // dgv_Articulos
             // 

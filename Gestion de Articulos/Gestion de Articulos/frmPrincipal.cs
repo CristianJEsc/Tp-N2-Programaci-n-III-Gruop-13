@@ -16,8 +16,12 @@ using conexion;
 namespace Gestion_de_Articulos
 {
     public partial class frm_Principal : Form
+
+
+
     {
         private List<Articulo> listaArt;
+        gestionArticulo GestArt = new gestionArticulo();
         public frm_Principal()
         {
             InitializeComponent();
@@ -185,6 +189,32 @@ namespace Gestion_de_Articulos
         {
             Marcas fr = new Marcas();
             fr.ShowDialog();
+        }
+
+        private void btn_Eliminar_Click(object sender, EventArgs e)
+        {
+
+
+
+            string ART;
+            ART = Convert.ToString(dgv_Articulos.SelectedRows[0].Cells[1].Value);
+
+            DialogResult respuesta = MessageBox.Show("DESEA ELIMINAR EL ARTICULO: " + ART, "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (respuesta == DialogResult.Yes)
+            {
+
+                int id;
+                id = Convert.ToInt32(dgv_Articulos.SelectedRows[0].Cells[0].Value);
+                GestArt.EliminarArticulo(id);
+                //  MessageBox.Show(Convert.ToString(id));
+                this.cargar();
+            }
+
+            else
+            {
+                return;
+            }
         }
     }
 }

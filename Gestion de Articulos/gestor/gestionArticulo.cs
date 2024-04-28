@@ -103,6 +103,35 @@ namespace gestor
             }
         }
 
+        public void EliminarArticulo(int id)
+        {
+            Conexion datos = new Conexion();
+
+            try
+            {
+
+                datos.setearConsulta("delete from ARTICULOS where ID = @id ");
+                datos.setearParametro("id", id);
+                datos.ejecutarLectura();
+
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.ToString());
+            }
+
+            finally
+            {
+
+                datos.cerrarConexion();
+
+            }
+
+        }
+
+
+
         public List<Articulo> filtrar(string campo, string criterio, string filtro)
         {
             Conexion datos = new Conexion();
