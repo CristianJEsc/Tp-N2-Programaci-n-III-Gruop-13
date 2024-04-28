@@ -236,45 +236,62 @@ namespace Gestion_de_Articulos
 
         private void btnCambiarImagenIzquierda_Click(object sender, EventArgs e)
         {
-            try
+
+            if (dgv_Articulos.CurrentRow != null)
             {
-                Articulo seleccionado = (Articulo)dgv_Articulos.CurrentRow.DataBoundItem;
-                cargarImagen(seleccionado.imagenes[imagenActual - 1]);
-                imagenActual--;
+                try
+                {
+                    Articulo seleccionado = (Articulo)dgv_Articulos.CurrentRow.DataBoundItem;
+                    cargarImagen(seleccionado.imagenes[imagenActual - 1]);
+                    imagenActual--;
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    return;
+                }
+                catch (NullReferenceException)
+                {
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
-            catch (ArgumentOutOfRangeException)
+            else
             {
-                return;
-            }
-            catch (NullReferenceException)
-            {
-                return;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Seleccione un Artículo");
             }
         }
 
         private void btnCambiarImagenDerecha_Click(object sender, EventArgs e)
         {
-            try
+
+            if (dgv_Articulos.CurrentRow != null)
             {
-                Articulo seleccionado = (Articulo)dgv_Articulos.CurrentRow.DataBoundItem;
-                cargarImagen(seleccionado.imagenes[imagenActual + 1]);
-                imagenActual++;
+
+                try
+                {
+                    Articulo seleccionado = (Articulo)dgv_Articulos.CurrentRow.DataBoundItem;
+                    cargarImagen(seleccionado.imagenes[imagenActual + 1]);
+                    imagenActual++;
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    return;
+                }
+                catch (NullReferenceException)
+                {
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
-            catch (ArgumentOutOfRangeException)
+            else
             {
-                return;
-            }
-            catch (NullReferenceException)
-            {
-                return;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Seleccione un Artículo");
             }
         }
     }
