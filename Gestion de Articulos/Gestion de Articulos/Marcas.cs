@@ -71,5 +71,12 @@ namespace Gestion_de_Articulos
         {
             Close();
         }
+
+        private void btn_Agregar_Click(object sender, EventArgs e)
+        {
+          AgregarMarca fr = new AgregarMarca();
+            fr.Show();
+            CargaDatos();
+        }
     }
 }

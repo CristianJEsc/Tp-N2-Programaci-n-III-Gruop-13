@@ -41,13 +41,14 @@
             // 
             this.dgv_Marcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Marcas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgv_Marcas.Location = new System.Drawing.Point(54, 12);
+            this.dgv_Marcas.Location = new System.Drawing.Point(36, 8);
+            this.dgv_Marcas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgv_Marcas.MultiSelect = false;
             this.dgv_Marcas.Name = "dgv_Marcas";
             this.dgv_Marcas.RowHeadersWidth = 62;
             this.dgv_Marcas.RowTemplate.Height = 28;
             this.dgv_Marcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Marcas.Size = new System.Drawing.Size(451, 434);
+            this.dgv_Marcas.Size = new System.Drawing.Size(301, 282);
             this.dgv_Marcas.TabIndex = 11;
             // 
             // btn_Agregar
@@ -55,23 +56,22 @@
             this.btn_Agregar.BackColor = System.Drawing.Color.SteelBlue;
             this.btn_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Agregar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Agregar.Location = new System.Drawing.Point(546, 14);
-            this.btn_Agregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Agregar.Location = new System.Drawing.Point(364, 9);
             this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(138, 54);
+            this.btn_Agregar.Size = new System.Drawing.Size(92, 35);
             this.btn_Agregar.TabIndex = 0;
             this.btn_Agregar.Text = "Agregar";
             this.btn_Agregar.UseVisualStyleBackColor = false;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.SteelBlue;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(546, 99);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Location = new System.Drawing.Point(364, 64);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 54);
+            this.button1.Size = new System.Drawing.Size(92, 35);
             this.button1.TabIndex = 1;
             this.button1.Text = "Modificar";
             this.button1.UseVisualStyleBackColor = false;
@@ -81,10 +81,9 @@
             this.btnEliminar.BackColor = System.Drawing.Color.SteelBlue;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminar.Location = new System.Drawing.Point(546, 184);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEliminar.Location = new System.Drawing.Point(364, 120);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(138, 54);
+            this.btnEliminar.Size = new System.Drawing.Size(92, 35);
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -95,10 +94,9 @@
             this.btn_Cerrar.BackColor = System.Drawing.Color.SteelBlue;
             this.btn_Cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cerrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Cerrar.Location = new System.Drawing.Point(546, 392);
-            this.btn_Cerrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Cerrar.Location = new System.Drawing.Point(364, 255);
             this.btn_Cerrar.Name = "btn_Cerrar";
-            this.btn_Cerrar.Size = new System.Drawing.Size(138, 54);
+            this.btn_Cerrar.Size = new System.Drawing.Size(92, 35);
             this.btn_Cerrar.TabIndex = 3;
             this.btn_Cerrar.Text = "Cerrar";
             this.btn_Cerrar.UseVisualStyleBackColor = false;
@@ -106,9 +104,9 @@
             // 
             // Marcas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 474);
+            this.ClientSize = new System.Drawing.Size(492, 308);
             this.Controls.Add(this.btn_Cerrar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.button1);
@@ -116,7 +114,6 @@
             this.Controls.Add(this.dgv_Marcas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Marcas";

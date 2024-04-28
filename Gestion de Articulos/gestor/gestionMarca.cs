@@ -41,6 +41,29 @@ namespace gestor
             }
         }
 
+        public void AgregarMarca(string descripcion) {
+        Conexion conexion = new Conexion();
+            conexion.setearConsulta("  INSERT INTO MARCAS (Descripcion) VALUES (@descripcion)");
+            conexion.setearParametro("descripcion", descripcion);
+            conexion.ejecutarLectura();
+
+            conexion.cerrarConexion();
+        
+        
+        
+        }
+
+        public decimal  ProximoID()
+        {
+            decimal id = 0;
+            Conexion conexion = new Conexion();
+            conexion.setearConsulta("  SELECT IDENT_CURRENT('[CATALOGO_P3_DB].[dbo].[MARCAS]') + 1 AS ProximoId;");
+            conexion.ejecutarLectura();
+            conexion.Lector.Read();
+            id = (decimal)conexion.Lector["ProximoId"];
+            return id;
+        }
+
         public void EliminarMarca(int id)
         {
             Conexion datos = new Conexion();
