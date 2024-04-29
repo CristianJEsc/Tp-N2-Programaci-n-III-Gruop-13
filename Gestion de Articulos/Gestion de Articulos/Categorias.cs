@@ -46,10 +46,10 @@ namespace Gestion_de_Articulos
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            string marca;
-            marca = Convert.ToString(dgvCategorias.SelectedRows[0].Cells[1].Value);
+            string CAT;
+            CAT= Convert.ToString(dgvCategorias.SelectedRows[0].Cells[1].Value);
 
-            DialogResult respuesta = MessageBox.Show("DESEA ELIMINAR LA MARCA: " + marca, "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult respuesta = MessageBox.Show("DESEA ELIMINAR LA CATEGORIA: " + CAT, "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (respuesta == DialogResult.Yes)
             {
@@ -70,13 +70,20 @@ namespace Gestion_de_Articulos
         {
             int id = Convert.ToInt32(dgvCategorias.CurrentRow.Cells[0].Value);
             string nombre = Convert.ToString(dgvCategorias.CurrentRow.Cells[1].Value);
-            ModificarMarca fr = new ModificarMarca(id, nombre);
+            ModificarCategoria fr = new ModificarCategoria(id, nombre);
             fr.Show();
         }
 
         private void btn_Cerrar_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_Agregar_Click(object sender, EventArgs e)
+        {
+            
+            ModificarCategoria fr = new ModificarCategoria(1);
+            fr.Show();
         }
     }
 }

@@ -55,12 +55,12 @@ namespace gestor
 
         public decimal ProximoID()
         {
-            decimal id = 0;
+            int id = 0;
             Conexion conexion = new Conexion();
-            conexion.setearConsulta("  SELECT IDENT_CURRENT('[CATALOGO_P3_DB].[dbo].[MARCAS]') + 1 AS ProximoId;");
+            conexion.setearConsulta("  SELECT MAX(Id) +1 AS ProximoId FROM MARCAS");
             conexion.ejecutarLectura();
             conexion.Lector.Read();
-            id = (decimal)conexion.Lector["ProximoId"];
+            id = (int)conexion.Lector["ProximoId"];
             return id;
         }
 

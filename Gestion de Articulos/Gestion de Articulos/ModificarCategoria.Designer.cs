@@ -78,8 +78,9 @@
             this.btn_Modificar.Name = "btn_Modificar";
             this.btn_Modificar.Size = new System.Drawing.Size(92, 35);
             this.btn_Modificar.TabIndex = 9;
-            this.btn_Modificar.Text = "Modificar";
+            this.btn_Modificar.Text = "Aceptar";
             this.btn_Modificar.UseVisualStyleBackColor = false;
+            this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click_1);
             // 
             // btnCancelar
             // 
@@ -92,6 +93,7 @@
             this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
             // ModificarCategoria
             // 
@@ -105,6 +107,7 @@
             this.Controls.Add(this.txbDescripcion);
             this.Controls.Add(this.txtID);
             this.Name = "ModificarCategoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModificarCategoria";
             this.Load += new System.EventHandler(this.ModificarCategoria_Load);
             this.ResumeLayout(false);

@@ -19,6 +19,14 @@ namespace Gestion_de_Articulos
         public ModificarCategoria()
         {
             InitializeComponent();
+            
+        }
+
+        public ModificarCategoria(int id)
+        {
+            InitializeComponent();
+            txtID.Text = Convert.ToString(gestCat.ProximoID());
+
         }
 
         private void ModificarCategoria_Load(object sender, EventArgs e)
@@ -38,17 +46,61 @@ namespace Gestion_de_Articulos
             txbDescripcion.Text = des;
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btn_Modificar_Click(object sender, EventArgs e)
+        private void btn_Modificar_Click_1(object sender, EventArgs e)
         {
-            gestCat.ModificarCategoria(Convert.ToInt32(txtID.Text), txbDescripcion.Text);
-            MessageBox.Show("MARCA MODIFICADA", "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (string.IsNullOrEmpty(txbDescripcion.Text))
+            {
 
-            this.Close();
+
+                MessageBox.Show("LA DESCRIPCION NO PUEDE ESTAR VACIA", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                if (ValidarMarca(txbDescripcion.Text))
+                {
+                    MessageBox.Show("LA CATEGORIA YA EXISTE", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                try
+                {
+
+
+                    gestCat.AgregarCategoria(txbDescripcion.Text);
+                    MessageBox.Show("Categoria agregada correctamente", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        public bool ValidarMarca(string nombre)
+        {
+            List<string> marcas = new List<string>();
+            bool validar = false;
+            marcas = gestCat.ListaCategorias();
+            foreach (var item in marcas)
+            {
+                if (item.Equals(nombre.ToUpper()))
+                {
+                    validar = true;
+                }
+
+            }
+
+
+            return validar;
+
         }
 
     }
