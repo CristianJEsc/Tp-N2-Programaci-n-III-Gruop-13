@@ -49,6 +49,7 @@
             this.btnMarcas = new System.Windows.Forms.Button();
             this.btnCambiarImagenIzquierda = new System.Windows.Forms.Button();
             this.btnCambiarImagenDerecha = new System.Windows.Forms.Button();
+            this.btnCategorias = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Imagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Articulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articuloBindingSource)).BeginInit();
@@ -295,11 +296,25 @@
             this.btnCambiarImagenDerecha.UseVisualStyleBackColor = true;
             this.btnCambiarImagenDerecha.Click += new System.EventHandler(this.btnCambiarImagenDerecha_Click);
             // 
+            // btnCategorias
+            // 
+            this.btnCategorias.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategorias.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCategorias.Location = new System.Drawing.Point(577, 366);
+            this.btnCategorias.Name = "btnCategorias";
+            this.btnCategorias.Size = new System.Drawing.Size(92, 35);
+            this.btnCategorias.TabIndex = 78;
+            this.btnCategorias.Text = "Categorias";
+            this.btnCategorias.UseVisualStyleBackColor = false;
+            this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
+            // 
             // frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 456);
+            this.Controls.Add(this.btnCategorias);
             this.Controls.Add(this.btnCambiarImagenDerecha);
             this.Controls.Add(this.btnCambiarImagenIzquierda);
             this.Controls.Add(this.btnMarcas);
@@ -357,6 +372,7 @@
         private System.Windows.Forms.Button btnMarcas;
         private System.Windows.Forms.Button btnCambiarImagenIzquierda;
         private System.Windows.Forms.Button btnCambiarImagenDerecha;
+        private System.Windows.Forms.Button btnCategorias;
     }
 }
 

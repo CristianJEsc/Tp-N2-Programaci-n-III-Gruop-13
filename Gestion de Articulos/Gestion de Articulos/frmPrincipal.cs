@@ -294,5 +294,11 @@ namespace Gestion_de_Articulos
                 MessageBox.Show("Seleccione un Artículo");
             }
         }
+
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+            Categorias fr = new Categorias();
+            fr.Show();
+        }
     }
 }
