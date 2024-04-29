@@ -70,7 +70,7 @@ namespace Gestion_de_Articulos
                 articulo.Categoria = (Categoria)cbo_Categoria.SelectedItem;
                 articulo.Precio = decimal.Parse(tbx_Precio.Text);
                 articulo.Imagen = new Imagen();
-                articulo.imagenes[0] = tbx_url.Text;
+                
                 if (articulo.Id != 0)
                 {
                     gestion.modificar(articulo);
