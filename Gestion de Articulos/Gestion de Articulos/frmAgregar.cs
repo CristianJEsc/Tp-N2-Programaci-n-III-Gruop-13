@@ -69,8 +69,16 @@ namespace Gestion_de_Articulos
                 articulo.Marca = (Marca)cbo_Marca.SelectedItem;
                 articulo.Categoria = (Categoria)cbo_Categoria.SelectedItem;
                 articulo.Precio = decimal.Parse(tbx_Precio.Text);
-                articulo.Imagen = new Imagen();
-                
+                List<string> urlImagenes = tbx_url.Text.Split(',').ToList();
+                foreach (string palabra in urlImagenes)
+                {
+                    if (palabra.Contains(","))
+                    {
+                        urlImagenes.Remove(palabra);
+                    }
+                }
+                articulo.imagenes = urlImagenes;
+
                 if (articulo.Id != 0)
                 {
                     gestion.modificar(articulo);

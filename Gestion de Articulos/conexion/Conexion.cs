@@ -68,6 +68,18 @@ namespace conexion
             comando.Parameters.AddWithValue(nombre, valor);
         }
 
+        public int ultimoId()
+        {
+            setearConsulta("SELECT Id FROM ARTICULOS WHERE Id = (SELECT IDENT_CURRENT('ARTICULOS'))");
+            ejecutarLectura();
+            int id = 0;
+            if (lector.Read())
+            {
+                id = (int)lector["Id"];
+            }
+            return id;
+        }
+
         public void cerrarConexion()
         {
             if (lector != null)

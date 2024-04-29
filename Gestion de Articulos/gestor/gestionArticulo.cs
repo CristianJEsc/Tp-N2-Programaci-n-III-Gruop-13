@@ -90,25 +90,38 @@ namespace gestor
 
         }
 
-        public void agregar(Articulo nuevo)
+        public void agregar(Articulo art)
         {
-            Conexion acceso = new Conexion();
             try
             {
-                acceso.setearConsulta("Insert into ARTICULOS(Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio)values('" + nuevo.Codigo + "', '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', @IdMarca, @IdCategoria, " + nuevo.Precio + " )");
-                acceso.setearParametro("@IdMarca", nuevo.Marca.IdMarca);
-                acceso.setearParametro("@IdCategoria", nuevo.Categoria.IdCategoria);
-                acceso.ejecutarAccion();
+                Conexion datos = new Conexion();
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio)" +
+                    " VALUES ('" + art.Codigo + "', '" + art.Nombre + "', '" + art.Descripcion + "', @marcaId, @categoriaId, @precio)");
+                datos.setearParametro("@marcaId", art.Marca.IdMarca);
+                datos.setearParametro("@categoriaId", art.Categoria.IdCategoria);
+                datos.setearParametro("@precio", art.Precio);
+                datos.ejecutarAccion();
+                datos.cerrarConexion();
+                datos = new Conexion();
+                art.Id = datos.ultimoId();
+                datos.cerrarConexion();
+                foreach (string imagen in art.imagenes)
+                {
+                    datos = new Conexion();
+                    datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenURL) VALUES (" + art.Id + ", '" + imagen + "')");
+                    datos.ejecutarAccion();
+                    datos.cerrarConexion();
+                }
             }
+
             catch (Exception ex)
             {
                 throw ex;
             }
-            finally
-            {
-                acceso.cerrarConexion();
-            }
         }
+
+
+
         public void modificar(Articulo art)
         {
             Conexion acceso = new Conexion();
